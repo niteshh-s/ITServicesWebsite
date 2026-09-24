@@ -20,8 +20,7 @@ import {
 export class Content {
   // TODO: confirm the trading name, then check trademark and domain availability.
   readonly companyName = signal('Trivance');
-  readonly tagline = signal('Three senior specialists. No layers in between.');
-  readonly defaultHeroImage = signal('/images/hero-home.jpg');
+  readonly tagline = signal('Three senior specialists. No layers in between.');  readonly defaultHeroImage = signal('/images/hero-home.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },
@@ -265,6 +264,145 @@ export class Content {
       ],
     },
     {
+      slug: 'ai-agent-services',
+      title: 'AI Agent Services',
+      summary:
+        'Assistants and agents grounded in your own business data, with permissions and audit intact.',
+      tagline: 'AI that answers from your data, not from the internet',
+      lead: 'Nitesh Kumar Singh & Rishabh Singh',
+      heroImage: '/images/hero-ai-agents.jpg',
+      introHeading: 'AI agents grounded in your business data',
+      introBody: [
+        'A general-purpose chatbot cannot tell you what is in your contracts, your stock system or your internal policies. Useful answers come from connecting a model to your own systems — with your permissions and audit trail still intact.',
+        'That connective work is where most AI projects quietly fail: retrieval, access control, integration and evaluation. It is ordinary engineering discipline applied to a new tool, and it is exactly what the three of us already do.',
+      ],
+      highlights: [
+        'Answers cited back to the source document',
+        'Respects the permissions you already have',
+        'Runs inside your own tenant',
+        'Evaluated before it reaches a customer',
+      ],
+      sections: [
+        {
+          id: 'assistants',
+          navLabel: 'Assistants',
+          eyebrow: 'Knowledge assistants and chatbots',
+          heading: 'Answers from your own documents',
+          body: [
+            'Most organisations already hold the answer somewhere — in a policy document, a past quote, a ticket history or a database. The problem is finding it.',
+            'We build assistants that retrieve from your own content and show their working, so staff can check the source rather than take the answer on trust.',
+          ],
+          capabilities: [
+            {
+              title: 'Retrieval-based answering',
+              description:
+                'Responses drawn from your documents and databases, with links back to the source so anyone can verify them.',
+            },
+            {
+              title: 'Permission-aware retrieval',
+              description:
+                'The assistant only surfaces content the person asking is already entitled to see. No new data leaks through the chat box.',
+            },
+            {
+              title: 'Internal and customer-facing',
+              description:
+                'Deployed into Teams or your intranet for staff, or onto your site for customers with tighter guardrails and escalation to a human.',
+            },
+          ],
+        },
+        {
+          id: 'agents',
+          navLabel: 'Agents',
+          eyebrow: 'Task automation agents',
+          heading: 'Agents that do the work, not just describe it',
+          body: [
+            'An assistant tells you what to do. An agent does it — reads the email, extracts the data, updates the system and tells you what changed.',
+            'We keep a person in the loop wherever the outcome matters, so automation speeds up the process without removing accountability for it.',
+          ],
+          capabilities: [
+            {
+              title: 'Document and email processing',
+              description:
+                'Extract structured data from invoices, forms and shared inboxes, then write it into your system of record.',
+            },
+            {
+              title: 'Multi-step workflows',
+              description:
+                'Agents that call your existing APIs to complete a process end to end, with approval steps where the cost of being wrong is high.',
+            },
+            {
+              title: 'Human in the loop',
+              description:
+                'Explicit handoff points so a person reviews anything consequential before it is committed.',
+            },
+          ],
+        },
+        {
+          id: 'grounding',
+          navLabel: 'Grounding',
+          eyebrow: 'Data preparation and evaluation',
+          heading: 'The unglamorous part that decides whether it works',
+          body: [
+            'Model choice is rarely what separates a useful AI feature from a demo that embarrasses you. Data quality, retrieval design and honest testing are.',
+            'We treat an AI feature like any other system: measurable, regression-tested, and improved on evidence rather than impressions.',
+          ],
+          capabilities: [
+            {
+              title: 'Data preparation and indexing',
+              description:
+                'Cleaning, chunking and indexing your content so retrieval returns the right passage instead of a vaguely related one.',
+            },
+            {
+              title: 'Line-of-business integration',
+              description:
+                'Connecting agents to ERP, CRM and internal APIs through supported interfaces, not screen scraping.',
+            },
+            {
+              title: 'Evaluation and regression testing',
+              description:
+                'A test set of real questions with expected answers, run on every change, so accuracy does not quietly drift.',
+            },
+          ],
+        },
+        {
+          id: 'ai-governance',
+          navLabel: 'Governance',
+          eyebrow: 'AI governance and security',
+          heading: 'Know what it can see and what it said',
+          body: [
+            'Before an AI system touches business data, someone has to be able to answer where that data goes, who can reach it and what the system told people.',
+            'We design for those questions from the start, which is usually the difference between a pilot that gets approved and one that stalls in review.',
+          ],
+          capabilities: [
+            {
+              title: 'Data boundaries',
+              description:
+                'Deployed in your own tenant, with your content excluded from third-party model training.',
+            },
+            {
+              title: 'Access control and audit',
+              description:
+                'Logging of prompts, retrieved sources and responses, so any answer can be reconstructed and reviewed later.',
+            },
+            {
+              title: 'Policy and risk alignment',
+              description:
+                'Acceptable-use policy, data protection assessment support and alignment with emerging AI regulation.',
+            },
+          ],
+        },
+      ],
+      technologies: [
+        'Azure OpenAI',
+        'Microsoft Copilot Studio',
+        'Azure AI Search',
+        'Semantic Kernel',
+        'Power Platform',
+        'Python',
+        '.NET',
+      ],
+    },
+    {
       slug: 'cybersecurity-services',
       title: 'Cybersecurity Services',
       summary:
@@ -419,6 +557,12 @@ export class Content {
         'A short, scoped piece of work that ends with a delivery plan, estimate and architecture you can act on with or without us.',
     },
     {
+      name: 'AI proof of concept',
+      bestFor: 'Testing whether AI helps',
+      description:
+        'A time-boxed build against your real data, measured on real questions, so you find out whether it works before committing a budget to it.',
+    },
+    {
       name: 'Project delivery',
       bestFor: 'A defined outcome',
       description:
@@ -444,6 +588,7 @@ export class Content {
     'Hardware procurement, cabling or on-site desktop support',
     'Body-shopping developers by the dozen',
     'Reselling licences we get a margin on',
+    'Selling you an AI project when a simple automation would do the job better',
   ]);
 
   readonly team = signal<TeamMember[]>([
@@ -452,21 +597,21 @@ export class Content {
       role: 'Software Engineering Lead',
       experience: '7 years',
       bio: 'Seven years building and maintaining enterprise applications in pro-code stacks, from greenfield products to systems that had been running for a decade before he touched them.',
-      focus: ['Custom applications', 'API integration', 'Modernisation'],
+      focus: ['Custom applications', 'API integration', 'AI integration', 'Modernisation'],
     },
     {
       name: 'Rishabh Singh',
       role: 'Low-Code Practice Lead',
       experience: '7 years',
       bio: 'Seven years delivering enterprise low-code and no-code solutions, with a focus on making fast delivery survive contact with an IT governance review.',
-      focus: ['Power Platform', 'Workflow automation', 'Platform governance'],
+      focus: ['Power Platform', 'Workflow automation', 'AI agents', 'Platform governance'],
     },
     {
       name: 'Riya Singh',
       role: 'Security Lead',
       experience: '10+ years',
       bio: 'Over a decade in enterprise cybersecurity, covering assessment, identity and access, and taking organisations through compliance certification.',
-      focus: ['Security assessment', 'Identity and access', 'Compliance'],
+      focus: ['Security assessment', 'Identity and access', 'AI governance', 'Compliance'],
     },
   ]);
 

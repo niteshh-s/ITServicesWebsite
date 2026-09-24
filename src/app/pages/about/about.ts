@@ -42,7 +42,7 @@ export class About {
     inject(Seo).update({
       title: 'About Us',
       description:
-        'A three-person specialist team covering software engineering, low-code delivery and cybersecurity.',
+        'A three-person specialist team covering software engineering, AI agents, low-code delivery and cybersecurity.',
     });
   }
 }

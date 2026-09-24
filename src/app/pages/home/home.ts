@@ -23,9 +23,9 @@ export class Home {
 
   constructor() {
     inject(Seo).update({
-      title: 'Software, Low-Code & Security Specialists',
+      title: 'Software, AI, Low-Code & Security Specialists',
       description:
-        'A three-person team of senior specialists covering custom software development, Power Platform delivery and cybersecurity.',
+        'A three-person team of senior specialists covering custom software development, AI agents grounded in your business data, Power Platform delivery and cybersecurity.',
     });
   }
 }

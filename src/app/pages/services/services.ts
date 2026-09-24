@@ -20,7 +20,7 @@ export class Services {
     inject(Seo).update({
       title: 'Services',
       description:
-        'App development, custom software, cloud, managed IT, cybersecurity, data and consulting services.',
+        'Custom software development, AI agents, Power Platform app delivery and cybersecurity services.',
     });
   }
 }
