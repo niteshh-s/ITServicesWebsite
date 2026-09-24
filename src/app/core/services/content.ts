@@ -616,9 +616,14 @@ export class Content {
     {
       name: 'Prafful Chauhan',
       role: 'Finance & Domain Specialist',
-      experience: 'NISM certified',
-      bio: 'Postgraduate in Banking and Finance and an NISM certificate holder. Brings the domain and regulatory context to engagements in banking, financial services and insurance, and keeps our commercial terms straightforward.',
-      focus: ['Banking & finance domain', 'Regulatory context', 'Commercial structuring'],
+      experience: '5 years',
+      bio: 'Specialist Officer at State Bank of India for close to five years, with a postgraduate degree in Banking and Finance and an NISM certification. Brings first-hand banking operations and regulatory context to engagements in financial services.',
+      focus: [
+        'Banking operations',
+        'Financial services domain',
+        'Regulatory context',
+        'Commercial structuring',
+      ],
     },
   ]);
 
