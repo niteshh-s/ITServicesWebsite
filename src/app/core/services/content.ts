@@ -1,4 +1,5 @@
 import { Service, signal } from '@angular/core';
+import { BRAND } from '../brand';
 import {
   Commitment,
   ContactDetails,
@@ -18,9 +19,9 @@ import {
  */
 @Service()
 export class Content {
-  // TODO: confirm the trading name, then check trademark and domain availability.
-  readonly companyName = signal('Trivance');
-  readonly tagline = signal('Software, AI and security engineering.');  readonly defaultHeroImage = signal('/images/hero-home.jpg');
+  readonly companyName = signal(BRAND.name);
+  readonly tagline = signal(BRAND.tagline);
+  readonly defaultHeroImage = signal('/images/hero-home.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },
@@ -628,8 +629,8 @@ export class Content {
   ]);
 
   readonly contact = signal<ContactDetails>({
-    // TODO: replace all three with real details before launch.
-    email: 'hello@trivance.example',
+    // TODO: replace the phone number and location with real details before launch.
+    email: `hello@${BRAND.domain}`,
     phone: '+00 0000 000000',
     location: 'Remote-first',
     social: [{ label: 'LinkedIn', url: 'https://www.linkedin.com' }],
