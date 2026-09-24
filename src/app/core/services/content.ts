@@ -616,8 +616,8 @@ export class Content {
     {
       name: 'Prafful Chauhan',
       role: 'Finance & Domain Specialist',
-      experience: '5 years',
-      bio: 'Specialist Officer at State Bank of India for close to five years, with a postgraduate degree in Banking and Finance and an NISM certification. Brings first-hand banking operations and regulatory context to engagements in financial services.',
+      experience: '5+ years',
+      bio: 'Served as a Specialist Officer at State Bank of India for over five years, with a postgraduate degree in Banking and Finance and an NISM certification. Brings first-hand banking operations and regulatory context to engagements in financial services.',
       focus: [
         'Banking operations',
         'Financial services domain',
