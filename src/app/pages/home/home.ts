@@ -17,15 +17,33 @@ export class Home {
 
   protected readonly commitments = this.content.commitments;
   protected readonly services = this.content.services;
-  protected readonly team = this.content.team;
   protected readonly process = this.content.process;
   protected readonly heroImage = this.content.defaultHeroImage;
+
+  protected readonly reasons = [
+    {
+      title: 'Senior engineers on your project',
+      body: 'The people who scope the work are the people who deliver it. Nothing gets quietly reassigned to whoever is on the bench.',
+    },
+    {
+      title: 'Fixed-price discovery first',
+      body: 'We will not quote a build before we understand the problem. Discovery is scoped and priced up front, and the output is yours either way.',
+    },
+    {
+      title: 'You own everything we build',
+      body: 'Source code, infrastructure definitions and cloud accounts are in your name from day one. There is no lock-in to leave.',
+    },
+    {
+      title: 'Security is not an afterthought',
+      body: 'Threat modelling, access control and audit are designed in from the start, whether the project is an application or an AI agent.',
+    },
+  ];
 
   constructor() {
     inject(Seo).update({
       title: 'Software, AI, Low-Code & Security Specialists',
       description:
-        'A three-person team of senior specialists covering custom software development, AI agents grounded in your business data, Power Platform delivery and cybersecurity.',
+        'Custom software development, AI agents grounded in your business data, Power Platform delivery and cybersecurity services.',
     });
   }
 }

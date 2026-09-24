@@ -33,7 +33,7 @@ export class HowWeWork {
     },
     {
       title: 'We say no when it is not our work',
-      body: 'We are three specialists, not a full-service agency. If your problem sits outside what we do well, we will tell you and point you elsewhere.',
+      body: 'We are specialists, not a full-service agency. If your problem sits outside what we do well, we will tell you and point you elsewhere.',
     },
   ];
 

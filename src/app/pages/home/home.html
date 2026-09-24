@@ -1,15 +1,14 @@
 <section class="hero">
   <img class="hero__bg" [src]="heroImage()" alt="" fetchpriority="high" />
   <div class="hero__inner container">
-    <span class="eyebrow eyebrow--brand">Software &middot; AI &middot; Low-code &middot; Security</span>
-    <h1 class="accent-cap">Three senior specialists, working directly with you</h1>
-    <p class="lead">
-      We are a small team by design. You get the people who actually build and secure the system,
-      not a sales pitch followed by a handover to someone you have never met.
+    <h1>Move <span class="hero__accent">faster</span> without breaking trust</h1>
+    <p class="hero__sub">
+      Custom software, AI agents and security engineering for organisations that cannot afford to
+      get it wrong.
     </p>
     <div class="hero__actions">
       <a class="btn btn--primary" routerLink="/contact">Book an intro call</a>
-      <a class="btn btn--ghost" routerLink="/how-we-work">See how we work</a>
+      <a class="btn btn--ghost" routerLink="/services">Explore services</a>
     </div>
   </div>
 </section>
@@ -33,7 +32,7 @@
       align="left"
       eyebrow="What we do"
       heading="Four practices, done properly"
-      description="Each one is led by the person who has spent their career doing it. We do not take work outside these four areas."
+      description="Deep specialisation over broad coverage. We take on work in these four areas and turn down the rest."
     />
     <div class="grid grid--3">
       @for (service of services(); track service.slug; let i = $index) {
@@ -47,19 +46,17 @@
   <div class="container">
     <app-section-heading
       align="left"
-      eyebrow="Who you work with"
-      heading="The whole team, on your project"
+      eyebrow="Why us"
+      heading="Engineering you can audit"
     />
-    <ul class="team">
-      @for (member of team(); track member.name) {
-        <li>
-          <span class="team__experience">{{ member.experience }}</span>
-          <h3>{{ member.name }}</h3>
-          <p class="team__role">{{ member.role }}</p>
-          <p>{{ member.bio }}</p>
-        </li>
+    <div class="grid grid--2">
+      @for (reason of reasons; track reason.title) {
+        <article class="reason">
+          <h3>{{ reason.title }}</h3>
+          <p>{{ reason.body }}</p>
+        </article>
       }
-    </ul>
+    </div>
     <div class="more">
       <a class="btn btn--ghost" routerLink="/about">More about us</a>
     </div>

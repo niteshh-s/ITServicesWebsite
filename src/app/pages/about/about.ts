@@ -21,12 +21,12 @@ export class About {
 
   protected readonly values = [
     {
-      title: 'Small on purpose',
-      body: 'Three senior people with no bench to keep busy. We take on a limited number of projects so none of them get the junior treatment.',
+      title: 'Specialists, not generalists',
+      body: 'Senior people with no bench to keep busy. We take on a limited number of projects so none of them get the junior treatment.',
     },
     {
       title: 'Honest about scope',
-      body: 'We turn down work that sits outside our three practices. Telling you we cannot help costs us one project; pretending otherwise costs you a lot more.',
+      body: 'We turn down work that sits outside our four practices. Telling you we cannot help costs us one project; pretending otherwise costs you a lot more.',
     },
     {
       title: 'Transparent by default',
@@ -42,7 +42,7 @@ export class About {
     inject(Seo).update({
       title: 'About Us',
       description:
-        'A three-person specialist team covering software engineering, AI agents, low-code delivery and cybersecurity.',
+        'Senior specialists covering software engineering, AI agents, low-code delivery and cybersecurity.',
     });
   }
 }

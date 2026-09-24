@@ -20,7 +20,7 @@ import {
 export class Content {
   // TODO: confirm the trading name, then check trademark and domain availability.
   readonly companyName = signal('Trivance');
-  readonly tagline = signal('Three senior specialists. No layers in between.');  readonly defaultHeroImage = signal('/images/hero-home.jpg');
+  readonly tagline = signal('Software, AI and security engineering.');  readonly defaultHeroImage = signal('/images/hero-home.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },
@@ -31,8 +31,8 @@ export class Content {
   ]);
 
   readonly commitments = signal<Commitment[]>([
-    { value: '24 yrs', label: 'Combined enterprise experience' },
-    { value: '3', label: 'Senior specialists, no juniors' },
+    { value: '20+ yrs', label: 'Enterprise engineering experience' },
+    { value: '0', label: 'Work handed to junior engineers' },
     { value: '1 day', label: 'Response to every enquiry' },
     { value: '100%', label: 'Code and IP ownership stays yours' },
   ]);
@@ -584,7 +584,7 @@ export class Content {
 
   /** Being explicit about scope is more useful to a buyer than pretending to cover everything. */
   readonly exclusions = signal<string[]>([
-    'A 24/7 manned service desk — we are three people, and we will not pretend otherwise',
+    'A 24/7 manned service desk',
     'Hardware procurement, cabling or on-site desktop support',
     'Body-shopping developers by the dozen',
     'Reselling licences we get a margin on',
