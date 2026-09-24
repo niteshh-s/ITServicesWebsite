@@ -31,6 +31,8 @@ export interface ServiceItem {
   highlights: string[];
   sections: ServiceSection[];
   technologies: string[];
+  /** Falls back to Content.defaultHeroImage when omitted. */
+  heroImage?: string;
 }
 
 export interface CaseStudy {

@@ -17,6 +17,7 @@ import {
 export class Content {
   readonly companyName = signal('Northwind IT');
   readonly tagline = signal('Engineering the systems behind ambitious businesses');
+  readonly defaultHeroImage = signal('/images/pexels-bibekghosh-14553704.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },

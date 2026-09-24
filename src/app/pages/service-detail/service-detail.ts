@@ -18,6 +18,9 @@ export class ServiceDetail {
   readonly slug = input.required<string>();
 
   protected readonly service = computed(() => this.content.serviceBySlug(this.slug()));
+  protected readonly heroImage = computed(
+    () => this.service()?.heroImage ?? this.content.defaultHeroImage(),
+  );
   protected readonly otherServices = computed(() =>
     this.content.services().filter((item) => item.slug !== this.slug()),
   );

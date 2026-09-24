@@ -1,5 +1,6 @@
 @if (service(); as service) {
   <section class="hero">
+    <img class="hero__bg" [src]="heroImage()" alt="" fetchpriority="high" />
     <div class="hero__inner container">
       <h1 class="hero__title">{{ service.title }}</h1>
       <p class="hero__tagline">{{ service.tagline }}</p>

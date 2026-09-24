@@ -18,6 +18,7 @@ export class Home {
   protected readonly stats = this.content.stats;
   protected readonly testimonials = this.content.testimonials;
   protected readonly services = this.content.services;
+  protected readonly heroImage = this.content.defaultHeroImage;
   protected readonly featuredCaseStudies = computed(() => this.content.caseStudies().slice(0, 3));
 
   protected readonly process = [
