@@ -9,9 +9,9 @@
 
   <nav class="subnav" aria-label="On this page">
     <div class="subnav__inner container">
-      <a href="#intro">Intro</a>
+      <a [routerLink]="[]" fragment="intro">Intro</a>
       @for (section of service.sections; track section.id) {
-        <a [href]="'#' + section.id">{{ section.navLabel }}</a>
+        <a [routerLink]="[]" [fragment]="section.id">{{ section.navLabel }}</a>
       }
     </div>
   </nav>
