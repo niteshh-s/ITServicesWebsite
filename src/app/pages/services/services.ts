@@ -6,9 +6,10 @@ import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
 import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
 import { ServiceCard } from '../../shared/components/service-card/service-card';
+import { Reveal } from '../../shared/directives/reveal';
 
 @Component({
-  imports: [RouterLink, PageHero, SectionHeading, ServiceCard, CtaBanner],
+  imports: [RouterLink, PageHero, SectionHeading, ServiceCard, CtaBanner, Reveal],
   selector: 'app-services',
   styleUrl: './services.scss',
   templateUrl: './services.html',

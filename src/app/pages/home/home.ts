@@ -5,9 +5,10 @@ import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
 import { ServiceCard } from '../../shared/components/service-card/service-card';
+import { Reveal } from '../../shared/directives/reveal';
 
 @Component({
-  imports: [RouterLink, SectionHeading, ServiceCard, CtaBanner],
+  imports: [RouterLink, SectionHeading, ServiceCard, CtaBanner, Reveal],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',

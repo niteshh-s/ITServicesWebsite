@@ -5,9 +5,10 @@ import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
 import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
+import { Reveal } from '../../shared/directives/reveal';
 
 @Component({
-  imports: [RouterLink, PageHero, SectionHeading, CtaBanner],
+  imports: [RouterLink, PageHero, SectionHeading, CtaBanner, Reveal],
   selector: 'app-about',
   styleUrl: './about.scss',
   templateUrl: './about.html',

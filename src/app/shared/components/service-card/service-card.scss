@@ -9,14 +9,20 @@
   border-radius: var(--radius-md);
   transition:
     border-color var(--duration) var(--ease),
-    background var(--duration) var(--ease);
+    background var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
 
   &:hover {
     color: var(--color-text);
     border-color: var(--color-brand);
+    transform: translateY(-4px);
 
     .card__link {
       color: var(--color-brand);
+    }
+
+    .card__link span {
+      transform: translateX(4px);
     }
   }
 
@@ -50,4 +56,9 @@
   text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color var(--duration) var(--ease);
+
+  span {
+    display: inline-block;
+    transition: transform var(--duration) var(--ease);
+  }
 }

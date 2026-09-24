@@ -16,8 +16,8 @@
 <section class="section section--tight commitments-section">
   <div class="container">
     <dl class="commitments">
-      @for (item of commitments(); track item.label) {
-        <div>
+      @for (item of commitments(); track item.label; let i = $index) {
+        <div [appReveal]="i">
           <dt>{{ item.value }}</dt>
           <dd>{{ item.label }}</dd>
         </div>
@@ -29,6 +29,7 @@
 <section class="section section--alt">
   <div class="container">
     <app-section-heading
+      appReveal
       align="left"
       eyebrow="What we do"
       heading="Four practices, done properly"
@@ -36,7 +37,11 @@
     />
     <div class="grid grid--3">
       @for (service of services(); track service.slug; let i = $index) {
-        <app-service-card [service]="service" [index]="(i + 1).toString().padStart(2, '0')" />
+        <app-service-card
+          [appReveal]="i"
+          [service]="service"
+          [index]="(i + 1).toString().padStart(2, '0')"
+        />
       }
     </div>
   </div>
@@ -45,19 +50,20 @@
 <section class="section">
   <div class="container">
     <app-section-heading
+      appReveal
       align="left"
       eyebrow="Why us"
       heading="Engineering you can audit"
     />
     <div class="grid grid--2">
-      @for (reason of reasons; track reason.title) {
-        <article class="reason">
+      @for (reason of reasons; track reason.title; let i = $index) {
+        <article class="reason" [appReveal]="i">
           <h3>{{ reason.title }}</h3>
           <p>{{ reason.body }}</p>
         </article>
       }
     </div>
-    <div class="more">
+    <div class="more" appReveal>
       <a class="btn btn--ghost" routerLink="/about">More about us</a>
     </div>
   </div>
@@ -66,6 +72,7 @@
 <section class="section section--alt">
   <div class="container">
     <app-section-heading
+      appReveal
       align="left"
       eyebrow="How we work"
       heading="A process without surprises"
@@ -73,14 +80,14 @@
     />
     <ol class="process">
       @for (step of process(); track step.title; let i = $index) {
-        <li>
+        <li [appReveal]="i">
           <span class="process__num" aria-hidden="true">0{{ i + 1 }}</span>
           <h3>{{ step.title }}</h3>
           <span class="process__duration">{{ step.duration }}</span>
         </li>
       }
     </ol>
-    <div class="more">
+    <div class="more" appReveal>
       <a class="btn btn--ghost" routerLink="/how-we-work">Read the detail</a>
     </div>
   </div>

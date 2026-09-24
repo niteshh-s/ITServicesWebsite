@@ -26,6 +26,7 @@
   height: 100%;
   object-fit: cover;
   filter: grayscale(35%) contrast(105%);
+  animation: slow-zoom 2s var(--ease) both;
 }
 
 .hero__inner {
@@ -35,6 +36,7 @@
 
 .hero__inner h1 {
   margin-bottom: var(--space-2);
+  animation: rise-in 700ms var(--ease) both;
 }
 
 .hero__tagline {
@@ -44,4 +46,5 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-brand);
+  animation: rise-in 700ms var(--ease) 120ms both;
 }

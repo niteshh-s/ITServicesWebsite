@@ -15,6 +15,7 @@
 <section class="section">
   <div class="container">
     <app-section-heading
+      appReveal
       align="left"
       eyebrow="Our capabilities"
       heading="Choose a starting point"
@@ -22,7 +23,11 @@
     />
     <div class="grid grid--3">
       @for (service of services(); track service.slug; let i = $index) {
-        <app-service-card [service]="service" [index]="(i + 1).toString().padStart(2, '0')" />
+        <app-service-card
+          [appReveal]="i"
+          [service]="service"
+          [index]="(i + 1).toString().padStart(2, '0')"
+        />
       }
     </div>
   </div>

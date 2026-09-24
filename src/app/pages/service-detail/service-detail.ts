@@ -3,9 +3,10 @@ import { RouterLink } from '@angular/router';
 import { Content } from '../../core/services/content';
 import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
+import { Reveal } from '../../shared/directives/reveal';
 
 @Component({
-  imports: [RouterLink, CtaBanner],
+  imports: [RouterLink, CtaBanner, Reveal],
   selector: 'app-service-detail',
   styleUrl: './service-detail.scss',
   templateUrl: './service-detail.html',

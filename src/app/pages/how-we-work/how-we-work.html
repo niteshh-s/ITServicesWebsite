@@ -14,7 +14,7 @@
     />
     <ol class="process">
       @for (step of process(); track step.title; let i = $index) {
-        <li>
+        <li [appReveal]="i">
           <span class="process__num" aria-hidden="true">{{ i + 1 }}</span>
           <div class="process__body">
             <h3>{{ step.title }}</h3>
@@ -35,8 +35,8 @@
       heading="Ways to work with us"
     />
     <div class="grid grid--2">
-      @for (model of engagementModels(); track model.name) {
-        <article class="model">
+      @for (model of engagementModels(); track model.name; let i = $index) {
+        <article class="model" [appReveal]="i">
           <span class="model__best">Best for: {{ model.bestFor }}</span>
           <h3>{{ model.name }}</h3>
           <p>{{ model.description }}</p>
@@ -50,8 +50,8 @@
   <div class="container">
     <app-section-heading align="left" eyebrow="Our commitments" heading="What you always get" />
     <div class="grid grid--2">
-      @for (item of guarantees; track item.title) {
-        <article class="guarantee">
+      @for (item of guarantees; track item.title; let i = $index) {
+        <article class="guarantee" [appReveal]="i">
           <h3>{{ item.title }}</h3>
           <p>{{ item.body }}</p>
         </article>
@@ -69,8 +69,8 @@
       description="We would rather lose the enquiry than take work we cannot do properly at our size."
     />
     <ul class="exclusions">
-      @for (item of exclusions(); track item) {
-        <li>{{ item }}</li>
+      @for (item of exclusions(); track item; let i = $index) {
+        <li [appReveal]="i">{{ item }}</li>
       }
     </ul>
   </div>

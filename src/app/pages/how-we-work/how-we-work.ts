@@ -4,9 +4,10 @@ import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
 import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
+import { Reveal } from '../../shared/directives/reveal';
 
 @Component({
-  imports: [PageHero, SectionHeading, CtaBanner],
+  imports: [PageHero, SectionHeading, CtaBanner, Reveal],
   selector: 'app-how-we-work',
   styleUrl: './how-we-work.scss',
   templateUrl: './how-we-work.html',

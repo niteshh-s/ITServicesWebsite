@@ -28,14 +28,14 @@
 
   <section class="section" id="intro">
     <div class="container intro">
-      <div>
+      <div appReveal>
         <h2 class="accent-cap">{{ service.introHeading }}</h2>
         @for (paragraph of service.introBody; track paragraph) {
           <p class="lead">{{ paragraph }}</p>
         }
       </div>
 
-      <ul class="highlights">
+      <ul class="highlights" [appReveal]="1">
         @for (highlight of service.highlights; track highlight) {
           <li>{{ highlight }}</li>
         }
@@ -57,7 +57,7 @@
 
         <ol class="capabilities">
           @for (capability of section.capabilities; track capability.title; let i = $index) {
-            <li class="capability">
+            <li class="capability" [appReveal]="i">
               <span class="capability__num" aria-hidden="true">{{ i + 1 }}</span>
               <h3>{{ capability.title }}</h3>
               <p>{{ capability.description }}</p>

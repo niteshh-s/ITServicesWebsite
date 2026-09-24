@@ -28,6 +28,7 @@
   object-fit: cover;
   object-position: 70% 50%;
   filter: grayscale(35%) contrast(105%);
+  animation: slow-zoom 2s var(--ease) both;
 }
 
 .hero__inner {
@@ -39,6 +40,7 @@
     margin-bottom: var(--space-6);
     font-size: clamp(2.25rem, 5vw, 4.25rem);
     letter-spacing: -0.02em;
+    animation: rise-in 800ms var(--ease) both;
   }
 }
 
@@ -55,6 +57,7 @@
   line-height: 1.8;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  animation: rise-in 800ms var(--ease) 120ms both;
 }
 
 .hero__actions {
@@ -62,6 +65,7 @@
   flex-wrap: wrap;
   gap: var(--space-4);
   margin-top: var(--space-8);
+  animation: rise-in 800ms var(--ease) 240ms both;
 }
 
 .commitments-section {
@@ -95,6 +99,14 @@
   background: var(--color-surface-raised);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  transition:
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+
+  &:hover {
+    border-color: var(--color-border-strong);
+    transform: translateY(-3px);
+  }
 
   h3 {
     margin-bottom: var(--space-3);
@@ -118,6 +130,11 @@
   li {
     padding-top: var(--space-6);
     border-top: 2px solid var(--color-border);
+    transition: border-color var(--duration) var(--ease);
+
+    &:hover {
+      border-top-color: var(--color-brand);
+    }
   }
 
   h3 {
