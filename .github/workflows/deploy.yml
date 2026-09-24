@@ -1,0 +1,56 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half-published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  OUTPUT_DIR: dist/it-services-website/browser
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        # Served from https://<user>.github.io/<repo>/, so assets need the repo prefix.
+        run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
+
+      - name: Add SPA fallback and disable Jekyll
+        # Pages has no rewrite rules, so deep links are served via 404.html.
+        run: |
+          cp "$OUTPUT_DIR/index.html" "$OUTPUT_DIR/404.html"
+          touch "$OUTPUT_DIR/.nojekyll"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.OUTPUT_DIR }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

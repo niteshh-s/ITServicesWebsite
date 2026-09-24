@@ -21,7 +21,7 @@ import {
 export class Content {
   readonly companyName = signal(BRAND.name);
   readonly tagline = signal(BRAND.tagline);
-  readonly defaultHeroImage = signal('/images/hero-home.jpg');
+  readonly defaultHeroImage = signal('images/hero-home.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },
@@ -46,7 +46,7 @@ export class Content {
         'Custom applications, integrations and legacy modernisation, written by senior engineers.',
       tagline: 'Enterprise-grade custom software, built by the people you talk to',
       lead: 'Nitesh Kumar Singh',
-      heroImage: '/images/hero-software-development.jpg',
+      heroImage: 'images/hero-software-development.jpg',
       introHeading: 'Software built around how your business actually works',
       introBody: [
         'Off-the-shelf software forces you to change the way you work. Custom software does the opposite — it encodes the process that makes you competitive.',
@@ -159,7 +159,7 @@ export class Content {
         'Business apps and workflow automation delivered on Microsoft Power Platform in weeks.',
       tagline: 'Business applications delivered in weeks, not quarters',
       lead: 'Rishabh Singh',
-      heroImage: '/images/hero-app-development.jpg',
+      heroImage: 'images/hero-app-development.jpg',
       introHeading: 'Low-code delivery, without the low-code mess',
       introBody: [
         'Low-code platforms let you replace spreadsheets and manual handoffs quickly. Used without discipline, they leave you with hundreds of unowned apps and no way to audit them.',
@@ -271,7 +271,7 @@ export class Content {
         'Assistants and agents grounded in your own business data, with permissions and audit intact.',
       tagline: 'AI that answers from your data, not from the internet',
       lead: 'Nitesh Kumar Singh & Rishabh Singh',
-      heroImage: '/images/hero-ai-agents.jpg',
+      heroImage: 'images/hero-ai-agents.jpg',
       introHeading: 'AI agents grounded in your business data',
       introBody: [
         'A general-purpose chatbot cannot tell you what is in your contracts, your stock system or your internal policies. Useful answers come from connecting a model to your own systems — with your permissions and audit trail still intact.',
@@ -410,7 +410,7 @@ export class Content {
         'Security assessments, identity hardening and compliance readiness for teams without a security team.',
       tagline: 'Practical security for organisations without a security team',
       lead: 'Riya Singh',
-      heroImage: '/images/hero-cybersecurity.jpg',
+      heroImage: 'images/hero-cybersecurity.jpg',
       introHeading: 'Find the gaps before somebody else does',
       introBody: [
         'Most mid-sized organisations do not need a security operations centre. They need someone senior to look honestly at what they have, tell them what actually matters, and help fix it.',
