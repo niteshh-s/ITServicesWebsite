@@ -1,0 +1,9 @@
+<article class="card">
+  <span class="card__icon" [attr.data-icon]="service().icon" aria-hidden="true"></span>
+  <h3>{{ service().title }}</h3>
+  <p>{{ service().summary }}</p>
+  <a class="card__link" [routerLink]="['/services', service().slug]">
+    Learn more
+    <span aria-hidden="true">&rarr;</span>
+  </a>
+</article>

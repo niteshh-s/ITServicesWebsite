@@ -1,0 +1,13 @@
+.heading {
+  max-width: 680px;
+  margin-bottom: var(--space-8);
+}
+
+.heading--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.heading p {
+  margin-bottom: 0;
+}

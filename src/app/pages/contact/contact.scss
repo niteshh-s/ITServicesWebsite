@@ -1,0 +1,103 @@
+@use 'styles/mixins' as m;
+
+.page-hero {
+  padding-block: var(--space-16);
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.contact {
+  display: grid;
+  gap: var(--space-12);
+  align-items: start;
+
+  @include m.up(m.$bp-lg) {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+}
+
+.contact__form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+
+  label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font: inherit;
+    color: inherit;
+    background: var(--color-surface);
+
+    &:focus {
+      border-color: var(--color-brand);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.field__error {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.alert {
+  margin: 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.alert--success {
+  background: rgb(22 163 74 / 10%);
+  color: var(--color-success);
+}
+
+.contact__details {
+  @include m.card;
+
+  padding: var(--space-8);
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  dt {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+  }
+
+  dd {
+    margin: 0 0 var(--space-4);
+  }
+}
+
+.contact__form button {
+  justify-self: start;
+}

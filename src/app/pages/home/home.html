@@ -1,0 +1,91 @@
+<section class="hero">
+  <div class="hero__inner container">
+    <div class="hero__copy">
+      <span class="eyebrow">Managed IT &amp; Cloud</span>
+      <h1>Technology that keeps your business moving</h1>
+      <p class="lead">
+        We plan, build and run the systems behind ambitious companies — from cloud platforms and
+        cybersecurity to custom software and 24/7 support.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" routerLink="/contact">Book a consultation</a>
+        <a class="btn btn--ghost" routerLink="/services">Explore services</a>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="section stats-section">
+  <div class="container">
+    <dl class="stats">
+      @for (stat of stats(); track stat.label) {
+        <div class="stats__item">
+          <dt>{{ stat.value }}</dt>
+          <dd>{{ stat.label }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading
+      eyebrow="What we do"
+      heading="Services built around your roadmap"
+      description="Pick a single engagement or let us look after your entire technology stack."
+    />
+    <div class="grid grid--3">
+      @for (service of featuredServices(); track service.slug) {
+        <app-service-card [service]="service" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Case studies"
+      heading="Results we have delivered"
+      description="A few recent projects and the outcomes they produced."
+    />
+    <div class="grid grid--3">
+      @for (study of featuredCaseStudies(); track study.slug) {
+        <article class="study">
+          <span class="study__industry">{{ study.industry }}</span>
+          <h3>{{ study.title }}</h3>
+          <p>{{ study.summary }}</p>
+          <ul class="study__results">
+            @for (result of study.results; track result.label) {
+              <li><strong>{{ result.value }}</strong><span>{{ result.label }}</span></li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+    <div class="center">
+      <a class="btn btn--ghost" routerLink="/case-studies">View all case studies</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading eyebrow="Testimonials" heading="What our clients say" />
+    <div class="grid grid--3">
+      @for (testimonial of testimonials(); track testimonial.author) {
+        <figure class="quote">
+          <blockquote>{{ testimonial.quote }}</blockquote>
+          <figcaption>
+            <strong>{{ testimonial.author }}</strong>
+            <span>{{ testimonial.role }}, {{ testimonial.company }}</span>
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner />

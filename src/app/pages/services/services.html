@@ -1,0 +1,30 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Services</span>
+    <h1>Everything you need from an IT partner</h1>
+    <p class="lead">
+      Flexible engagements that scale with you — advisory, project delivery and fully managed
+      support.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      align="left"
+      heading="Our capabilities"
+      description="Select a service to see what a typical engagement looks like."
+    />
+    <div class="grid grid--3">
+      @for (service of services(); track service.slug) {
+        <app-service-card [service]="service" />
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner
+  heading="Not sure where to start?"
+  description="Tell us about your challenge and we will suggest the right starting point."
+/>

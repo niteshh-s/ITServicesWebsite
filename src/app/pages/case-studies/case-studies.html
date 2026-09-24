@@ -1,0 +1,29 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Case studies</span>
+    <h1>Proof, not promises</h1>
+    <p class="lead">A selection of engagements and the measurable impact they delivered.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container studies">
+    @for (study of caseStudies(); track study.slug) {
+      <article class="study">
+        <div class="study__media" aria-hidden="true"></div>
+        <div class="study__body">
+          <span class="eyebrow">{{ study.industry }} — {{ study.client }}</span>
+          <h2>{{ study.title }}</h2>
+          <p>{{ study.summary }}</p>
+          <ul class="study__results">
+            @for (result of study.results; track result.label) {
+              <li><strong>{{ result.value }}</strong><span>{{ result.label }}</span></li>
+            }
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<app-cta-banner heading="Want results like these?" />

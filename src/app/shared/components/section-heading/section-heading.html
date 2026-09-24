@@ -1,0 +1,9 @@
+<div class="heading" [class.heading--center]="align() === 'center'">
+  @if (eyebrow(); as text) {
+    <span class="eyebrow">{{ text }}</span>
+  }
+  <h2>{{ heading() }}</h2>
+  @if (description(); as text) {
+    <p class="lead">{{ text }}</p>
+  }
+</div>

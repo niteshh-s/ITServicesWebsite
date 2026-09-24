@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__brand">
+      <span class="logo__text">{{ companyName() }}</span>
+      <p>{{ tagline() }}</p>
+      <ul class="footer__social">
+        @for (item of contact().social; track item.url) {
+          <li>
+            <a [href]="item.url" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Services</h4>
+      <ul>
+        @for (service of services(); track service.slug) {
+          <li><a [routerLink]="['/services', service.slug]">{{ service.title }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        @for (link of navLinks(); track link.path) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a [href]="'mailto:' + contact().email">{{ contact().email }}</a></li>
+        <li><a [href]="'tel:' + contact().phone">{{ contact().phone }}</a></li>
+        <li>{{ contact().address }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bar">
+    <div class="container">
+      <small>&copy; {{ year }} {{ companyName() }}. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
