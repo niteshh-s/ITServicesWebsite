@@ -3,6 +3,7 @@
   padding-block: var(--space-24);
 
   p {
-    margin-bottom: var(--space-8);
+    max-width: 480px;
+    margin: 0 auto var(--space-8);
   }
 }

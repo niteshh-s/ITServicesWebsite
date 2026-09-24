@@ -3,13 +3,33 @@ export interface NavLink {
   path: string;
 }
 
+/** A numbered capability tile inside a service section. */
+export interface Capability {
+  title: string;
+  description: string;
+}
+
+/** One anchored block on a service detail page. */
+export interface ServiceSection {
+  id: string;
+  navLabel: string;
+  eyebrow: string;
+  heading: string;
+  body: string[];
+  capabilities: Capability[];
+}
+
 export interface ServiceItem {
   slug: string;
   title: string;
+  /** Short line used on cards and listings. */
   summary: string;
-  icon: string;
-  description: string;
-  features: string[];
+  /** Hero strapline, e.g. "Reimagining application development for agility and scale". */
+  tagline: string;
+  introHeading: string;
+  introBody: string[];
+  highlights: string[];
+  sections: ServiceSection[];
   technologies: string[];
 }
 
@@ -19,7 +39,6 @@ export interface CaseStudy {
   industry: string;
   title: string;
   summary: string;
-  image: string;
   results: { label: string; value: string }[];
 }
 
@@ -38,7 +57,6 @@ export interface Stat {
 export interface TeamMember {
   name: string;
   role: string;
-  image: string;
 }
 
 export interface ContactDetails {

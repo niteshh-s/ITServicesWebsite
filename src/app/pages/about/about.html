@@ -1,19 +1,25 @@
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">About us</span>
-    <h1>A team that treats your systems like our own</h1>
-    <p class="lead">
-      {{ companyName() }} has been helping organisations plan, build and operate their technology
-      since 2013. We are engineers, architects and support specialists who care about outcomes.
-    </p>
+    <h1 class="accent-cap">About us</h1>
+    <p class="hero__tagline">Engineers, architects and support specialists</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
+  <div class="container intro">
+    <div>
+      <span class="eyebrow eyebrow--brand">Who we are</span>
+      <h2 class="accent-cap">A team that treats your systems like our own</h2>
+      <p class="lead">
+        {{ companyName() }} has been helping organisations plan, build and operate their technology
+        since 2013. We work in small, senior teams that stay with a client long enough to understand
+        the business, not just the ticket.
+      </p>
+    </div>
+
     <dl class="stats">
       @for (stat of stats(); track stat.label) {
-        <div class="stats__item">
+        <div>
           <dt>{{ stat.value }}</dt>
           <dd>{{ stat.label }}</dd>
         </div>
@@ -24,7 +30,7 @@
 
 <section class="section section--alt">
   <div class="container">
-    <app-section-heading eyebrow="How we work" heading="Our values" />
+    <app-section-heading align="left" eyebrow="How we work" heading="Our values" />
     <div class="grid grid--2">
       @for (value of values; track value.title) {
         <article class="value">
@@ -38,16 +44,15 @@
 
 <section class="section">
   <div class="container">
-    <app-section-heading eyebrow="Leadership" heading="Meet the team" />
-    <div class="grid grid--3">
+    <app-section-heading align="left" eyebrow="Leadership" heading="Meet the team" />
+    <ul class="team">
       @for (member of team(); track member.name) {
-        <article class="member">
-          <div class="member__avatar" aria-hidden="true"></div>
+        <li>
           <h3>{{ member.name }}</h3>
           <p>{{ member.role }}</p>
-        </article>
+        </li>
       }
-    </div>
+    </ul>
   </div>
 </section>
 

@@ -1,9 +1,9 @@
-<article class="card">
-  <span class="card__icon" [attr.data-icon]="service().icon" aria-hidden="true"></span>
+<a class="card" [routerLink]="['/services', service().slug]">
+  <span class="card__index" aria-hidden="true">{{ index() }}</span>
   <h3>{{ service().title }}</h3>
   <p>{{ service().summary }}</p>
-  <a class="card__link" [routerLink]="['/services', service().slug]">
+  <span class="card__link">
     Learn more
     <span aria-hidden="true">&rarr;</span>
-  </a>
-</article>
+  </span>
+</a>

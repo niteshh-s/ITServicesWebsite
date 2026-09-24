@@ -10,4 +10,5 @@ import { ServiceItem } from '../../../core/models/content.models';
 })
 export class ServiceCard {
   readonly service = input.required<ServiceItem>();
+  readonly index = input('01');
 }

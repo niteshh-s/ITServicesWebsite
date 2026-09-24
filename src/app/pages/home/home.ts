@@ -17,14 +17,37 @@ export class Home {
 
   protected readonly stats = this.content.stats;
   protected readonly testimonials = this.content.testimonials;
-  protected readonly featuredServices = computed(() => this.content.services().slice(0, 6));
+  protected readonly services = this.content.services;
   protected readonly featuredCaseStudies = computed(() => this.content.caseStudies().slice(0, 3));
+
+  protected readonly process = [
+    {
+      title: 'Discover',
+      description:
+        'Workshops to map the process, agree success measures and size the smallest valuable release.',
+    },
+    {
+      title: 'Design',
+      description:
+        'Architecture options, prototypes and a costed delivery plan you can take to the board.',
+    },
+    {
+      title: 'Build',
+      description:
+        'A dedicated squad shipping working software every two weeks, with tests in the pipeline.',
+    },
+    {
+      title: 'Run',
+      description:
+        'Monitoring, support and a roadmap of improvements once the system is live.',
+    },
+  ];
 
   constructor() {
     inject(Seo).update({
       title: 'IT Services & Consulting',
       description:
-        'Cloud, cybersecurity, managed IT and custom software services for growing businesses.',
+        'App development, custom software, cloud, cybersecurity and managed IT services for growing businesses.',
     });
   }
 }

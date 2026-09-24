@@ -1,22 +1,19 @@
 <section class="hero">
   <div class="hero__inner container">
-    <div class="hero__copy">
-      <span class="eyebrow">Managed IT &amp; Cloud</span>
-      <h1>Technology that keeps your business moving</h1>
-      <p class="lead">
-        We plan, build and run the systems behind ambitious companies — from cloud platforms and
-        cybersecurity to custom software and 24/7 support.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" routerLink="/contact">Book a consultation</a>
-        <a class="btn btn--ghost" routerLink="/services">Explore services</a>
-      </div>
+    <span class="eyebrow eyebrow--brand">App &amp; Software Development</span>
+    <h1 class="accent-cap">Building scalable, intelligent software for tomorrow</h1>
+    <p class="lead">
+      We design, build and run the applications and platforms that ambitious businesses depend on —
+      from low-code business apps to enterprise-grade custom software.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" routerLink="/contact">Start a conversation</a>
+      <a class="btn btn--ghost" routerLink="/services">Explore services</a>
     </div>
-    <div class="hero__visual" aria-hidden="true"></div>
   </div>
 </section>
 
-<section class="section stats-section">
+<section class="section section--tight stats-section">
   <div class="container">
     <dl class="stats">
       @for (stat of stats(); track stat.label) {
@@ -32,13 +29,14 @@
 <section class="section section--alt">
   <div class="container">
     <app-section-heading
+      align="left"
       eyebrow="What we do"
       heading="Services built around your roadmap"
-      description="Pick a single engagement or let us look after your entire technology stack."
+      description="Take a single engagement or hand us the whole stack. Either way you get a named team and a clear plan."
     />
     <div class="grid grid--3">
-      @for (service of featuredServices(); track service.slug) {
-        <app-service-card [service]="service" />
+      @for (service of services(); track service.slug; let i = $index) {
+        <app-service-card [service]="service" [index]="(i + 1).toString().padStart(2, '0')" />
       }
     </div>
   </div>
@@ -47,9 +45,28 @@
 <section class="section">
   <div class="container">
     <app-section-heading
+      align="left"
+      eyebrow="How we work"
+      heading="A delivery model without surprises"
+    />
+    <ol class="process">
+      @for (step of process; track step.title; let i = $index) {
+        <li>
+          <span class="process__num" aria-hidden="true">0{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading
+      align="left"
       eyebrow="Case studies"
       heading="Results we have delivered"
-      description="A few recent projects and the outcomes they produced."
     />
     <div class="grid grid--3">
       @for (study of featuredCaseStudies(); track study.slug) {
@@ -65,15 +82,15 @@
         </article>
       }
     </div>
-    <div class="center">
+    <div class="more">
       <a class="btn btn--ghost" routerLink="/case-studies">View all case studies</a>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section">
   <div class="container">
-    <app-section-heading eyebrow="Testimonials" heading="What our clients say" />
+    <app-section-heading align="left" eyebrow="Testimonials" heading="What our clients say" />
     <div class="grid grid--3">
       @for (testimonial of testimonials(); track testimonial.author) {
         <figure class="quote">

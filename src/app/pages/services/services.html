@@ -1,24 +1,29 @@
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Services</span>
-    <h1>Everything you need from an IT partner</h1>
-    <p class="lead">
-      Flexible engagements that scale with you — advisory, project delivery and fully managed
-      support.
-    </p>
+    <h1 class="accent-cap">Services</h1>
+    <p class="hero__tagline">Everything you need from an engineering and IT partner</p>
   </div>
 </section>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a routerLink="/">Home</a>
+    <span aria-hidden="true">&rsaquo;</span>
+    <span class="breadcrumb__current">Services</span>
+  </nav>
+</div>
 
 <section class="section">
   <div class="container">
     <app-section-heading
       align="left"
-      heading="Our capabilities"
-      description="Select a service to see what a typical engagement looks like."
+      eyebrow="Our capabilities"
+      heading="Choose a starting point"
+      description="Advisory, project delivery or fully managed support — select a service to see how a typical engagement runs."
     />
     <div class="grid grid--3">
-      @for (service of services(); track service.slug) {
-        <app-service-card [service]="service" />
+      @for (service of services(); track service.slug; let i = $index) {
+        <app-service-card [service]="service" [index]="(i + 1).toString().padStart(2, '0')" />
       }
     </div>
   </div>
@@ -26,5 +31,5 @@
 
 <app-cta-banner
   heading="Not sure where to start?"
-  description="Tell us about your challenge and we will suggest the right starting point."
+  description="Tell us about the challenge and we will suggest the right first engagement."
 />

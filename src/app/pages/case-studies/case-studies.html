@@ -1,8 +1,7 @@
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Case studies</span>
-    <h1>Proof, not promises</h1>
-    <p class="lead">A selection of engagements and the measurable impact they delivered.</p>
+    <h1 class="accent-cap">Case studies</h1>
+    <p class="hero__tagline">Proof, not promises</p>
   </div>
 </section>
 
@@ -10,10 +9,12 @@
   <div class="container studies">
     @for (study of caseStudies(); track study.slug) {
       <article class="study">
-        <div class="study__media" aria-hidden="true"></div>
-        <div class="study__body">
-          <span class="eyebrow">{{ study.industry }} — {{ study.client }}</span>
-          <h2>{{ study.title }}</h2>
+        <div class="study__meta">
+          {{ study.industry }}
+          <span>{{ study.client }}</span>
+        </div>
+        <div>
+          <h2 class="accent-cap">{{ study.title }}</h2>
           <p>{{ study.summary }}</p>
           <ul class="study__results">
             @for (result of study.results; track result.label) {
