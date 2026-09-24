@@ -25,6 +25,10 @@ export class About {
       body: 'Senior people with no bench to keep busy. We take on a limited number of projects so none of them get the junior treatment.',
     },
     {
+      title: 'We understand the domain, not just the code',
+      body: 'For regulated work in banking and financial services, we bring the domain and compliance context with us rather than learning it on your budget.',
+    },
+    {
       title: 'Honest about scope',
       body: 'We turn down work that sits outside our four practices. Telling you we cannot help costs us one project; pretending otherwise costs you a lot more.',
     },

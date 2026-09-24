@@ -613,6 +613,13 @@ export class Content {
       bio: 'Over a decade in enterprise cybersecurity, covering assessment, identity and access, and taking organisations through compliance certification.',
       focus: ['Security assessment', 'Identity and access', 'AI governance', 'Compliance'],
     },
+    {
+      name: 'Prafful Chauhan',
+      role: 'Finance & Domain Specialist',
+      experience: 'NISM certified',
+      bio: 'Postgraduate in Banking and Finance and an NISM certificate holder. Brings the domain and regulatory context to engagements in banking, financial services and insurance, and keeps our commercial terms straightforward.',
+      focus: ['Banking & finance domain', 'Regulatory context', 'Commercial structuring'],
+    },
   ]);
 
   readonly contact = signal<ContactDetails>({
