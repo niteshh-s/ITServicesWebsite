@@ -17,7 +17,7 @@ import {
 export class Content {
   readonly companyName = signal('Northwind IT');
   readonly tagline = signal('Engineering the systems behind ambitious businesses');
-  readonly defaultHeroImage = signal('/images/pexels-bibekghosh-14553704.jpg');
+  readonly defaultHeroImage = signal('/images/hero-home.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },
@@ -41,6 +41,7 @@ export class Content {
       summary:
         'Low-code, mobile, web and modernised enterprise applications built for agility and scale.',
       tagline: 'Reimagining application development for agility and scale',
+      heroImage: '/images/hero-app-development.jpg',
       introHeading: 'Building scalable, intelligent apps for tomorrow',
       introBody: [
         'In a digital-first market, applications are the lifeline of a modern business. We help organisations innovate faster and smarter through a comprehensive suite of app development services.',
@@ -189,6 +190,7 @@ export class Content {
       summary:
         'Product engineering, integration, quality engineering and DevOps for custom software.',
       tagline: 'Custom software engineering, from discovery to production',
+      heroImage: '/images/hero-software-development.jpg',
       introHeading: 'Software built around how your business actually works',
       introBody: [
         'Off-the-shelf software forces you to change the way you work. Custom software does the opposite — it encodes the processes that make you competitive.',
@@ -326,6 +328,7 @@ export class Content {
       title: 'Cloud Services',
       summary: 'Assess, migrate and run resilient, cost-efficient cloud platforms.',
       tagline: 'Cloud foundations that scale with demand, not with cost',
+      heroImage: '/images/hero-cloud.jpg',
       introHeading: 'A cloud platform your teams can build on',
       introBody: [
         'We plan and execute cloud migrations, build secure landing zones and keep workloads fast, compliant and cost efficient.',
@@ -398,6 +401,7 @@ export class Content {
       title: 'Managed IT Services',
       summary: '24/7 monitoring, service desk and proactive maintenance for your estate.',
       tagline: 'Always-on support for the systems your people depend on',
+      heroImage: '/images/hero-managed-services.jpg',
       introHeading: 'A support team that prevents tickets, not just closes them',
       introBody: [
         'We look after your endpoints, networks and servers so your people stay productive and your internal team can focus on change instead of firefighting.',
@@ -464,6 +468,7 @@ export class Content {
       title: 'Cybersecurity Services',
       summary: 'Assess risk, harden your environment and respond when it matters.',
       tagline: 'Security that fits the way your business operates',
+      heroImage: '/images/hero-cybersecurity.jpg',
       introHeading: 'Protect data, users and systems end to end',
       introBody: [
         'We assess your risk posture, close the gaps that matter most and build controls your people can live with.',
@@ -530,6 +535,7 @@ export class Content {
       title: 'Data & Analytics',
       summary: 'Modern data platforms, pipelines and dashboards you can trust.',
       tagline: 'One version of the truth, available to every team',
+      heroImage: '/images/hero-data-analytics.jpg',
       introHeading: 'Turn scattered data into decisions',
       introBody: [
         'We build the platforms and pipelines that bring your data together, then make it usable through dashboards people actually open.',
@@ -591,6 +597,7 @@ export class Content {
       title: 'IT Consulting',
       summary: 'Strategy, architecture review and fractional CTO support.',
       tagline: 'Independent advice on where to invest next',
+      heroImage: '/images/hero-it-consulting.jpg',
       introHeading: 'Technology decisions you can defend',
       introBody: [
         'We give independent advice on architecture, sourcing and budget so your technology investments pay off.',
