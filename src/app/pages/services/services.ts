@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { Content } from '../../core/services/content';
 import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
+import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
 import { ServiceCard } from '../../shared/components/service-card/service-card';
 
 @Component({
-  imports: [RouterLink, SectionHeading, ServiceCard, CtaBanner],
+  imports: [RouterLink, PageHero, SectionHeading, ServiceCard, CtaBanner],
   selector: 'app-services',
   styleUrl: './services.scss',
   templateUrl: './services.html',

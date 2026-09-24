@@ -1,0 +1,9 @@
+<section class="hero">
+  <img class="hero__bg" [src]="image()" alt="" fetchpriority="high" />
+  <div class="hero__inner container">
+    <h1 class="accent-cap">{{ title() }}</h1>
+    @if (tagline(); as text) {
+      <p class="hero__tagline">{{ text }}</p>
+    }
+  </div>
+</section>

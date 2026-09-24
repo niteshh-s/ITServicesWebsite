@@ -2,9 +2,10 @@ import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Content } from '../../core/services/content';
 import { Seo } from '../../core/services/seo';
+import { PageHero } from '../../shared/components/page-hero/page-hero';
 
 @Component({
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, PageHero],
   selector: 'app-contact',
   styleUrl: './contact.scss',
   templateUrl: './contact.html',

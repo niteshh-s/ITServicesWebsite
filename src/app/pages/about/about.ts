@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { Content } from '../../core/services/content';
 import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
+import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
 
 @Component({
-  imports: [SectionHeading, CtaBanner],
+  imports: [PageHero, SectionHeading, CtaBanner],
   selector: 'app-about',
   styleUrl: './about.scss',
   templateUrl: './about.html',

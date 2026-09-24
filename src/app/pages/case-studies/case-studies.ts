@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { Content } from '../../core/services/content';
 import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
+import { PageHero } from '../../shared/components/page-hero/page-hero';
 
 @Component({
-  imports: [CtaBanner],
+  imports: [PageHero, CtaBanner],
   selector: 'app-case-studies',
   styleUrl: './case-studies.scss',
   templateUrl: './case-studies.html',
