@@ -43,46 +43,101 @@ export class Content {
       slug: 'software-development-services',
       title: 'Software Development Services',
       summary:
-        'Custom applications, integrations and legacy modernisation, written by senior engineers.',
-      tagline: 'Enterprise-grade custom software, built by the people you talk to',
-      lead: 'Nitesh Kumar Singh',
+        'Web and mobile applications, integrations and low-code delivery, built by senior engineers.',
+      tagline: 'Web, mobile and business applications, built to last',
+      lead: 'Nitesh Kumar Singh & Rishabh Singh',
       heroImage: 'images/hero-software-development.jpg',
       introHeading: 'Software built around how your business actually works',
       introBody: [
         'Off-the-shelf software forces you to change the way you work. Custom software does the opposite — it encodes the process that makes you competitive.',
+        'We cover the whole surface: websites and web platforms, Android and iOS apps, low-code business tools, and the integrations that connect them to the systems you already run.',
         'We take on a small number of projects at a time so the engineer who scoped your work is the one who writes it. No account managers, no handover to a delivery team you have never met.',
       ],
       highlights: [
-        'Senior engineers only',
+        'Web and mobile under one team',
         'Two-week delivery increments',
         'You own the code and the repository',
         'Fixed-price discovery before any build',
       ],
       sections: [
         {
-          id: 'custom-applications',
-          navLabel: 'Custom apps',
-          eyebrow: 'Custom application development',
-          heading: 'From discovery to production',
+          id: 'web',
+          navLabel: 'Web',
+          eyebrow: 'Web application development',
+          heading: 'Websites and platforms that carry real load',
           body: [
-            'We start with a short, fixed-price discovery to agree the problem, the success measures and the smallest release that proves value.',
-            'From there we build in two-week increments, so you see working software rather than status reports.',
+            'From a marketing site through to the customer portal your operations depend on, we build for the traffic and the change you expect two years from now.',
+            'Every engagement starts with a short, fixed-price discovery and ships in two-week increments, so you see working software rather than status reports.',
           ],
           capabilities: [
             {
-              title: 'Discovery and solution design',
+              title: 'Marketing sites and portals',
               description:
-                'Process mapping, architecture options and a costed delivery plan you can take to your board.',
+                'Fast, accessible, search-friendly sites with a content model your own team can edit without calling us.',
             },
             {
-              title: 'Web applications and internal tools',
+              title: 'Line-of-business applications',
               description:
-                'Line-of-business applications, customer portals and the internal tools that carry real operational load.',
+                'Internal tools and customer portals with role-based access, audit trails and reporting built in.',
             },
             {
-              title: 'Incremental delivery',
+              title: 'Design systems',
               description:
-                'Working software every sprint, demonstrated to you, with scope you can change between increments.',
+                'A shared component library so every screen stays consistent as the product grows.',
+            },
+          ],
+        },
+        {
+          id: 'mobile',
+          navLabel: 'Mobile',
+          eyebrow: 'Mobile app development',
+          heading: 'Android and iOS, built for the long run',
+          body: [
+            'We build mobile apps that people keep on their phone — quick to open, usable on a bad connection, and consistent across devices.',
+            'Whether that is one cross-platform codebase or fully native builds depends on your audience and budget, and we will tell you honestly which one you need.',
+          ],
+          capabilities: [
+            {
+              title: 'Native Android and iOS',
+              description:
+                'Platform-native apps that make full use of device hardware, notifications and background processing.',
+            },
+            {
+              title: 'Cross-platform delivery',
+              description:
+                'A single codebase shipping to both stores with Flutter or React Native, reaching users sooner for less.',
+            },
+            {
+              title: 'Release and lifecycle support',
+              description:
+                'Store submissions, phased rollouts, crash reporting and the ongoing updates the platforms require.',
+            },
+          ],
+        },
+        {
+          id: 'low-code',
+          navLabel: 'Low-code',
+          eyebrow: 'Low-code and business apps',
+          heading: 'Business applications in weeks, not quarters',
+          body: [
+            'Not every problem justifies a custom build. Where you already license Power Platform or OutSystems, we can deliver a working internal app far faster.',
+            'We set up the governance at the same time — environments, lifecycle management and data policies — so what we build stays supportable after handover.',
+          ],
+          capabilities: [
+            {
+              title: 'Rapid MVP development',
+              description:
+                'Validate the idea with a working app in weeks, so you commit budget to something you have already used.',
+            },
+            {
+              title: 'Workflow automation',
+              description:
+                'Replace approvals, handoffs and repeat data entry with auditable, monitored flows.',
+            },
+            {
+              title: 'Platform governance',
+              description:
+                'Environment strategy, deployment pipelines and data loss prevention policies your IT team will sign off.',
             },
           ],
         },
@@ -146,125 +201,16 @@ export class Content {
         'C#',
         'Java',
         'Angular',
+        'React',
         'TypeScript',
         'Node.js',
+        'Flutter',
         'SQL Server',
         'MongoDB',
+        'Power Platform',
+        'OutSystems',
         'Azure',
         'Docker',
-      ],
-    },
-    {
-      slug: 'app-development-services',
-      title: 'App Development Services',
-      summary:
-        'Business apps and workflow automation delivered on Microsoft Power Platform in weeks.',
-      tagline: 'Business applications delivered in weeks, not quarters',
-      lead: 'Rishabh Singh',
-      heroImage: 'images/hero-app-development.jpg',
-      introHeading: 'Low-code delivery, without the low-code mess',
-      introBody: [
-        'Low-code platforms let you replace spreadsheets and manual handoffs quickly. Used without discipline, they leave you with hundreds of unowned apps and no way to audit them.',
-        'We deliver fast and set up the governance at the same time — environments, lifecycle management and data policies — so what we build stays supportable after we hand it over.',
-      ],
-      highlights: [
-        'Working prototype in two to three weeks',
-        'Built on licences you already own',
-        'Governance and ALM from day one',
-        'Handover and training included',
-      ],
-      sections: [
-        {
-          id: 'low-code',
-          navLabel: 'Low-code',
-          eyebrow: 'Low-code / no-code application development',
-          heading: 'Our capabilities',
-          body: [
-            'We build business-critical applications on Microsoft Power Platform, bridging the gap between what the business needs and what IT can safely support.',
-            'The aim is always the same: remove manual effort, make the process visible, and leave your team able to maintain it.',
-          ],
-          capabilities: [
-            {
-              title: 'Rapid MVP development',
-              description:
-                'Validate the idea with a working app in weeks, so you commit budget to something you have already used.',
-            },
-            {
-              title: 'Workflow automation and business apps',
-              description:
-                'Automate approvals, handoffs and repetitive data entry with auditable, monitored flows.',
-            },
-            {
-              title: 'Integration with enterprise systems',
-              description:
-                'Connect new apps to existing ERP, CRM and line-of-business data through supported connectors, not screen scraping.',
-            },
-          ],
-        },
-        {
-          id: 'governance',
-          navLabel: 'Governance',
-          eyebrow: 'Platform governance',
-          heading: 'Keep citizen development under control',
-          body: [
-            'The apps your teams build themselves are an asset until nobody knows who owns them, what data they touch or how to restore them.',
-            'We put the guardrails in place so makers can move quickly inside boundaries that your IT and security teams have agreed.',
-          ],
-          capabilities: [
-            {
-              title: 'Environment and ALM strategy',
-              description:
-                'Separate development, test and production environments with managed solutions and repeatable deployments.',
-            },
-            {
-              title: 'Data loss prevention policies',
-              description:
-                'Connector policies that stop business data leaking into unapproved services by accident.',
-            },
-            {
-              title: 'Maker enablement',
-              description:
-                'Training, templates and standards so your internal makers build things your IT team is happy to support.',
-            },
-          ],
-        },
-        {
-          id: 'replacement',
-          navLabel: 'Replacement',
-          eyebrow: 'Legacy app replacement',
-          heading: 'Retire the spreadsheets',
-          body: [
-            'Most organisations run critical processes on a shared spreadsheet, an Access database or an ageing SharePoint site that one person understands.',
-            'We map the process as it really runs, then replace it with something supported, permissioned and backed up.',
-          ],
-          capabilities: [
-            {
-              title: 'Spreadsheet and Access replacement',
-              description:
-                'Turn fragile shared files into a proper application with validation, history and role-based access.',
-            },
-            {
-              title: 'SharePoint modernisation',
-              description:
-                'Move classic sites and workflows onto a current, supported platform without losing the data.',
-            },
-            {
-              title: 'Process mapping',
-              description:
-                'Document how the work actually happens before automating it, so you do not encode the workaround.',
-            },
-          ],
-        },
-      ],
-      technologies: [
-        'Microsoft Power Platform',
-        'Power Apps',
-        'Power Automate',
-        'OutSystems',
-        'Dataverse',
-        'SharePoint',
-        'Power BI',
-        'Azure Logic Apps',
       ],
     },
     {

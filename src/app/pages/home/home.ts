@@ -44,7 +44,7 @@ export class Home {
     inject(Seo).update({
       title: 'Software, AI, Low-Code & Security Specialists',
       description:
-        'Custom software development, AI agents grounded in your business data, Power Platform delivery and cybersecurity services.',
+        'Web and mobile application development, AI agents grounded in your business data, and cybersecurity services.',
     });
   }
 }

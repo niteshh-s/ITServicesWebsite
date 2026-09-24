@@ -31,7 +31,7 @@ export class About {
     },
     {
       title: 'Honest about scope',
-      body: 'We turn down work that sits outside our four practices. Telling you we cannot help costs us one project; pretending otherwise costs you a lot more.',
+      body: 'We turn down work that sits outside our three practices. Telling you we cannot help costs us one project; pretending otherwise costs you a lot more.',
     },
     {
       title: 'Transparent by default',

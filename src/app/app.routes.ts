@@ -12,6 +12,12 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/services/services').then((m) => m.Services),
   },
   {
+    // Retired: app development was folded into the software development practice.
+    path: 'services/app-development-services',
+    redirectTo: 'services/software-development-services',
+    pathMatch: 'full',
+  },
+  {
     path: 'services/:slug',
     loadComponent: () =>
       import('./pages/service-detail/service-detail').then((m) => m.ServiceDetail),
