@@ -50,7 +50,8 @@
 
 .subnav {
   position: sticky;
-  top: var(--header-height);
+  // Matches the condensed header, which is always the state by the time this pins.
+  top: var(--header-height-scrolled);
   z-index: 40;
   height: var(--subnav-height);
   background: var(--color-brand);

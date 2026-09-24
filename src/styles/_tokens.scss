@@ -61,6 +61,8 @@
   // Layout
   --container-max: 1220px;
   --header-height: 76px;
+  // The header condenses once scrolled; the service sub-nav pins directly below it.
+  --header-height-scrolled: 64px;
   --subnav-height: 56px;
 
   // Motion
