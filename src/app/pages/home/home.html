@@ -1,26 +1,26 @@
 <section class="hero">
   <img class="hero__bg" [src]="heroImage()" alt="" fetchpriority="high" />
   <div class="hero__inner container">
-    <span class="eyebrow eyebrow--brand">App &amp; Software Development</span>
-    <h1 class="accent-cap">Building scalable, intelligent software for tomorrow</h1>
+    <span class="eyebrow eyebrow--brand">Software &middot; Low-code &middot; Security</span>
+    <h1 class="accent-cap">Three senior specialists, working directly with you</h1>
     <p class="lead">
-      We design, build and run the applications and platforms that ambitious businesses depend on —
-      from low-code business apps to enterprise-grade custom software.
+      We are a small team by design. You get the people who actually build and secure the system,
+      not a sales pitch followed by a handover to someone you have never met.
     </p>
     <div class="hero__actions">
-      <a class="btn btn--primary" routerLink="/contact">Start a conversation</a>
-      <a class="btn btn--ghost" routerLink="/services">Explore services</a>
+      <a class="btn btn--primary" routerLink="/contact">Book an intro call</a>
+      <a class="btn btn--ghost" routerLink="/how-we-work">See how we work</a>
     </div>
   </div>
 </section>
 
-<section class="section section--tight stats-section">
+<section class="section section--tight commitments-section">
   <div class="container">
-    <dl class="stats">
-      @for (stat of stats(); track stat.label) {
-        <div class="stats__item">
-          <dt>{{ stat.value }}</dt>
-          <dd>{{ stat.label }}</dd>
+    <dl class="commitments">
+      @for (item of commitments(); track item.label) {
+        <div>
+          <dt>{{ item.value }}</dt>
+          <dd>{{ item.label }}</dd>
         </div>
       }
     </dl>
@@ -32,8 +32,8 @@
     <app-section-heading
       align="left"
       eyebrow="What we do"
-      heading="Services built around your roadmap"
-      description="Take a single engagement or hand us the whole stack. Either way you get a named team and a clear plan."
+      heading="Three things, done properly"
+      description="Each practice is led by the person who has spent their career doing it. We do not take work outside these three areas."
     />
     <div class="grid grid--3">
       @for (service of services(); track service.slug; let i = $index) {
@@ -47,18 +47,22 @@
   <div class="container">
     <app-section-heading
       align="left"
-      eyebrow="How we work"
-      heading="A delivery model without surprises"
+      eyebrow="Who you work with"
+      heading="The whole team, on your project"
     />
-    <ol class="process">
-      @for (step of process; track step.title; let i = $index) {
+    <ul class="team">
+      @for (member of team(); track member.name) {
         <li>
-          <span class="process__num" aria-hidden="true">0{{ i + 1 }}</span>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.description }}</p>
+          <span class="team__experience">{{ member.experience }}</span>
+          <h3>{{ member.name }}</h3>
+          <p class="team__role">{{ member.role }}</p>
+          <p>{{ member.bio }}</p>
         </li>
       }
-    </ol>
+    </ul>
+    <div class="more">
+      <a class="btn btn--ghost" routerLink="/about">More about us</a>
+    </div>
   </div>
 </section>
 
@@ -66,42 +70,21 @@
   <div class="container">
     <app-section-heading
       align="left"
-      eyebrow="Case studies"
-      heading="Results we have delivered"
+      eyebrow="How we work"
+      heading="A process without surprises"
+      description="Fixed-price discovery first, working software every two weeks, and everything handed over in your name."
     />
-    <div class="grid grid--3">
-      @for (study of featuredCaseStudies(); track study.slug) {
-        <article class="study">
-          <span class="study__industry">{{ study.industry }}</span>
-          <h3>{{ study.title }}</h3>
-          <p>{{ study.summary }}</p>
-          <ul class="study__results">
-            @for (result of study.results; track result.label) {
-              <li><strong>{{ result.value }}</strong><span>{{ result.label }}</span></li>
-            }
-          </ul>
-        </article>
+    <ol class="process">
+      @for (step of process(); track step.title; let i = $index) {
+        <li>
+          <span class="process__num" aria-hidden="true">0{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <span class="process__duration">{{ step.duration }}</span>
+        </li>
       }
-    </div>
+    </ol>
     <div class="more">
-      <a class="btn btn--ghost" routerLink="/case-studies">View all case studies</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <app-section-heading align="left" eyebrow="Testimonials" heading="What our clients say" />
-    <div class="grid grid--3">
-      @for (testimonial of testimonials(); track testimonial.author) {
-        <figure class="quote">
-          <blockquote>{{ testimonial.quote }}</blockquote>
-          <figcaption>
-            <strong>{{ testimonial.author }}</strong>
-            <span>{{ testimonial.role }}, {{ testimonial.company }}</span>
-          </figcaption>
-        </figure>
-      }
+      <a class="btn btn--ghost" routerLink="/how-we-work">Read the detail</a>
     </div>
   </div>
 </section>

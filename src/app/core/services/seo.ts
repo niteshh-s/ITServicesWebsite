@@ -7,7 +7,7 @@ export interface PageMeta {
   image?: string;
 }
 
-const SITE_NAME = 'Northwind IT';
+const SITE_NAME = 'Trivance';
 
 @Service()
 export class Seo {

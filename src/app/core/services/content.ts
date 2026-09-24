@@ -1,232 +1,88 @@
 import { Service, signal } from '@angular/core';
 import {
-  CaseStudy,
+  Commitment,
   ContactDetails,
+  EngagementModel,
   NavLink,
+  ProcessStep,
   ServiceItem,
-  Stat,
   TeamMember,
-  Testimonial,
 } from '../models/content.models';
 
 /**
- * Single source of truth for all site copy. Swap these arrays for the real
- * content (or a CMS/JSON fetch) without touching the components.
+ * Single source of truth for all site copy.
+ *
+ * Every claim here must be something the team can substantiate. Prefer
+ * commitments about how we work over statistics about a track record we do
+ * not have yet.
  */
 @Service()
 export class Content {
-  readonly companyName = signal('Northwind IT');
-  readonly tagline = signal('Engineering the systems behind ambitious businesses');
+  // TODO: confirm the trading name, then check trademark and domain availability.
+  readonly companyName = signal('Trivance');
+  readonly tagline = signal('Three senior specialists. No layers in between.');
   readonly defaultHeroImage = signal('/images/hero-home.jpg');
 
   readonly navLinks = signal<NavLink[]>([
     { label: 'Home', path: '/' },
     { label: 'Services', path: '/services' },
-    { label: 'Case Studies', path: '/case-studies' },
+    { label: 'How We Work', path: '/how-we-work' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
   ]);
 
-  readonly stats = signal<Stat[]>([
-    { label: 'Applications delivered', value: '250+' },
-    { label: 'Enterprise clients', value: '40+' },
-    { label: 'Average platform uptime', value: '99.9%' },
-    { label: 'Years of engineering', value: '12' },
+  readonly commitments = signal<Commitment[]>([
+    { value: '24 yrs', label: 'Combined enterprise experience' },
+    { value: '3', label: 'Senior specialists, no juniors' },
+    { value: '1 day', label: 'Response to every enquiry' },
+    { value: '100%', label: 'Code and IP ownership stays yours' },
   ]);
 
   readonly services = signal<ServiceItem[]>([
     {
-      slug: 'app-development-services',
-      title: 'App Development Services',
-      summary:
-        'Low-code, mobile, web and modernised enterprise applications built for agility and scale.',
-      tagline: 'Reimagining application development for agility and scale',
-      heroImage: '/images/hero-app-development.jpg',
-      introHeading: 'Building scalable, intelligent apps for tomorrow',
-      introBody: [
-        'In a digital-first market, applications are the lifeline of a modern business. We help organisations innovate faster and smarter through a comprehensive suite of app development services.',
-        'Whether you are modernising legacy systems, building intuitive mobile experiences, or accelerating delivery with low-code platforms, we help you ship applications that are resilient, scalable and ready for the future.',
-      ],
-      highlights: [
-        'Discovery-led delivery',
-        'Cloud-native by default',
-        'Secure engineering practices',
-        'Measurable business outcomes',
-      ],
-      sections: [
-        {
-          id: 'low-code',
-          navLabel: 'Low-code',
-          eyebrow: 'Low-code / no-code application development',
-          heading: 'Our capabilities',
-          body: [
-            'We help organisations build business-critical applications faster using industry-leading platforms such as Microsoft Power Platform, OutSystems and Mendix.',
-            'Our low-code expertise bridges the gap between business and IT — empowering citizen developers, streamlining workflows and shortening development cycles.',
-          ],
-          capabilities: [
-            {
-              title: 'Rapid MVP development',
-              description:
-                'Quickly validate ideas and prototypes to shorten the path from concept to production.',
-            },
-            {
-              title: 'Workflow automation and business apps',
-              description:
-                'Automate repetitive tasks and build scalable internal apps that boost operational efficiency.',
-            },
-            {
-              title: 'Integration with enterprise systems',
-              description:
-                'Seamlessly connect new apps with existing ERP, CRM and legacy systems for a unified digital ecosystem.',
-            },
-          ],
-        },
-        {
-          id: 'modernization',
-          navLabel: 'Modernization',
-          eyebrow: 'Application modernization and migration',
-          heading: 'Modernize to meet the standards',
-          body: [
-            'We help enterprises transform outdated applications into scalable, cloud-ready and high-performance solutions.',
-            'Our approach focuses on breaking down monolithic systems, re-engineering legacy code and enabling modern architectures that support continuous innovation.',
-          ],
-          capabilities: [
-            {
-              title: 'Monolith to microservices',
-              description:
-                'Decompose tightly coupled systems into independently deployable services with clear domain boundaries.',
-            },
-            {
-              title: 'Legacy code re-engineering',
-              description:
-                'Refactor ageing codebases into maintainable, well-tested modules without disrupting the business.',
-            },
-            {
-              title: 'Cloud re-platforming',
-              description:
-                'Move workloads onto containerised, managed cloud services to cut cost and improve resilience.',
-            },
-            {
-              title: 'Data and database migration',
-              description:
-                'Migrate data safely with validation, rollback plans and zero-surprise cutovers.',
-            },
-          ],
-        },
-        {
-          id: 'mobile',
-          navLabel: 'Mobile',
-          eyebrow: 'Mobile application development',
-          heading: 'Experiences built for every screen',
-          body: [
-            'We design and build mobile products that people actually use — fast, accessible and consistent across devices.',
-            'From a single cross-platform codebase to fully native builds, we choose the approach that fits your audience, budget and roadmap.',
-          ],
-          capabilities: [
-            {
-              title: 'Native iOS and Android',
-              description:
-                'Platform-native applications that take full advantage of device capabilities and performance.',
-            },
-            {
-              title: 'Cross-platform delivery',
-              description:
-                'One codebase across iOS and Android using Flutter or React Native to reach market sooner.',
-            },
-            {
-              title: 'Progressive web apps',
-              description:
-                'Installable, offline-capable web experiences that avoid app store friction entirely.',
-            },
-            {
-              title: 'Release and lifecycle support',
-              description:
-                'Store submissions, phased rollouts, crash analytics and ongoing feature iterations.',
-            },
-          ],
-        },
-        {
-          id: 'enterprise-web',
-          navLabel: 'Enterprise web',
-          eyebrow: 'Enterprise web applications',
-          heading: 'Portals and platforms that scale',
-          body: [
-            'We build the customer portals, partner platforms and internal tools that carry real operational load.',
-            'Every build is designed around clear architecture, accessibility standards and an automated delivery pipeline.',
-          ],
-          capabilities: [
-            {
-              title: 'Customer and partner portals',
-              description:
-                'Secure self-service experiences with role-based access and single sign-on.',
-            },
-            {
-              title: 'API-first architecture',
-              description:
-                'Well-documented, versioned APIs that let your products and partners integrate cleanly.',
-            },
-            {
-              title: 'Design systems',
-              description:
-                'A shared component library that keeps every screen consistent as your product grows.',
-            },
-          ],
-        },
-      ],
-      technologies: [
-        'Angular',
-        'React',
-        '.NET',
-        'Node.js',
-        'Flutter',
-        'Power Platform',
-        'OutSystems',
-        'Azure',
-      ],
-    },
-    {
       slug: 'software-development-services',
       title: 'Software Development Services',
       summary:
-        'Product engineering, integration, quality engineering and DevOps for custom software.',
-      tagline: 'Custom software engineering, from discovery to production',
+        'Custom applications, integrations and legacy modernisation, written by senior engineers.',
+      tagline: 'Enterprise-grade custom software, built by the people you talk to',
+      lead: 'Nitesh Kumar Singh',
       heroImage: '/images/hero-software-development.jpg',
       introHeading: 'Software built around how your business actually works',
       introBody: [
-        'Off-the-shelf software forces you to change the way you work. Custom software does the opposite — it encodes the processes that make you competitive.',
-        'Our product-minded engineering teams work end to end: shaping the problem, designing the architecture, shipping in short increments and supporting what we build.',
+        'Off-the-shelf software forces you to change the way you work. Custom software does the opposite — it encodes the process that makes you competitive.',
+        'We take on a small number of projects at a time so the engineer who scoped your work is the one who writes it. No account managers, no handover to a delivery team you have never met.',
       ],
       highlights: [
-        'Dedicated cross-functional teams',
+        'Senior engineers only',
         'Two-week delivery increments',
-        'Automated testing from day one',
-        'Full source and IP ownership',
+        'You own the code and the repository',
+        'Fixed-price discovery before any build',
       ],
       sections: [
         {
-          id: 'product-engineering',
-          navLabel: 'Product engineering',
-          eyebrow: 'Custom product engineering',
-          heading: 'From discovery to launch',
+          id: 'custom-applications',
+          navLabel: 'Custom apps',
+          eyebrow: 'Custom application development',
+          heading: 'From discovery to production',
           body: [
-            'We start with a structured discovery to agree the problem, success measures and the smallest release that proves value.',
-            'From there a dedicated squad designs, builds and releases in short increments, so you see working software rather than status reports.',
+            'We start with a short, fixed-price discovery to agree the problem, the success measures and the smallest release that proves value.',
+            'From there we build in two-week increments, so you see working software rather than status reports.',
           ],
           capabilities: [
             {
               title: 'Discovery and solution design',
               description:
-                'Workshops, process mapping and architecture options with a costed delivery roadmap.',
+                'Process mapping, architecture options and a costed delivery plan you can take to your board.',
             },
             {
-              title: 'UX and interface design',
+              title: 'Web applications and internal tools',
               description:
-                'Research-backed journeys, prototypes and accessible interfaces validated with real users.',
+                'Line-of-business applications, customer portals and the internal tools that carry real operational load.',
             },
             {
               title: 'Incremental delivery',
               description:
-                'Working software every sprint, with demos, measurable goals and no hidden progress.',
+                'Working software every sprint, demonstrated to you, with scope you can change between increments.',
             },
           ],
         },
@@ -236,249 +92,196 @@ export class Content {
           eyebrow: 'API and systems integration',
           heading: 'Connect what you already run',
           body: [
-            'Most value is unlocked by making existing systems talk to each other reliably.',
-            'We design integration layers that are observable, resilient to failure and simple enough for your own team to extend.',
+            'Most of the value in an established business is unlocked by making existing systems talk to each other reliably.',
+            'We design integration layers that are observable, resilient to failure and simple enough for your own team to extend later.',
           ],
           capabilities: [
             {
-              title: 'API design and governance',
+              title: 'API design and documentation',
               description:
-                'REST and GraphQL interfaces with versioning, documentation and rate limiting built in.',
-            },
-            {
-              title: 'Event-driven integration',
-              description:
-                'Message queues and event streams that decouple systems and absorb spikes in load.',
+                'Versioned, documented interfaces that your products and partners can integrate against cleanly.',
             },
             {
               title: 'ERP and CRM connectivity',
               description:
-                'Proven connectors into SAP, Dynamics, Salesforce and bespoke line-of-business systems.',
+                'Integration into Dynamics, Salesforce and bespoke line-of-business systems without brittle point-to-point scripts.',
+            },
+            {
+              title: 'Data migration',
+              description:
+                'Migrations with validation, reconciliation and a rehearsed rollback plan before anything goes live.',
             },
           ],
         },
         {
-          id: 'quality',
-          navLabel: 'Quality',
-          eyebrow: 'Quality engineering',
-          heading: 'Confidence in every release',
+          id: 'modernization',
+          navLabel: 'Modernization',
+          eyebrow: 'Application modernization',
+          heading: 'Bring legacy systems forward',
           body: [
-            'Quality is designed in, not inspected at the end. Tests are written alongside the feature and run on every commit.',
-            'That gives you a release pipeline you can trust, and the freedom to ship small changes often.',
+            'Ageing applications rarely need replacing wholesale. More often they need to be made safe to change again.',
+            'We refactor incrementally behind a test suite, so the system keeps running while it improves.',
           ],
           capabilities: [
             {
-              title: 'Test automation',
+              title: 'Legacy re-engineering',
               description:
-                'Unit, integration and end-to-end suites wired into continuous integration.',
+                'Untangle tightly coupled code into maintainable modules without a risky big-bang rewrite.',
             },
             {
-              title: 'Performance engineering',
+              title: 'Cloud re-platforming',
               description:
-                'Load modelling and profiling so the system holds up on your busiest day, not your average one.',
+                'Move workloads onto managed cloud services to cut running cost and remove single points of failure.',
             },
             {
-              title: 'Secure development',
+              title: 'Automated test coverage',
               description:
-                'Threat modelling, dependency scanning and code review aligned to OWASP guidance.',
-            },
-          ],
-        },
-        {
-          id: 'devops',
-          navLabel: 'DevOps',
-          eyebrow: 'DevOps and continuous delivery',
-          heading: 'Ship safely, repeatedly',
-          body: [
-            'We automate the path from commit to production so releases stop being an event.',
-            'Infrastructure is described as code, environments are reproducible and every deployment is observable and reversible.',
-          ],
-          capabilities: [
-            {
-              title: 'CI/CD pipelines',
-              description:
-                'Automated build, test and deploy with approvals and one-click rollback.',
-            },
-            {
-              title: 'Infrastructure as code',
-              description:
-                'Terraform and Bicep definitions that make environments reproducible and auditable.',
-            },
-            {
-              title: 'Observability',
-              description:
-                'Structured logging, tracing and alerting so issues surface before your users report them.',
+                'Add the regression tests that let your team deploy without holding their breath.',
             },
           ],
         },
       ],
       technologies: [
         '.NET',
-        'Node.js',
+        'C#',
+        'Angular',
         'TypeScript',
-        'Python',
-        'PostgreSQL',
+        'Node.js',
+        'SQL Server',
+        'Azure',
         'Docker',
-        'Kubernetes',
-        'Terraform',
       ],
     },
     {
-      slug: 'cloud-services',
-      title: 'Cloud Services',
-      summary: 'Assess, migrate and run resilient, cost-efficient cloud platforms.',
-      tagline: 'Cloud foundations that scale with demand, not with cost',
-      heroImage: '/images/hero-cloud.jpg',
-      introHeading: 'A cloud platform your teams can build on',
+      slug: 'app-development-services',
+      title: 'App Development Services',
+      summary:
+        'Business apps and workflow automation delivered on Microsoft Power Platform in weeks.',
+      tagline: 'Business applications delivered in weeks, not quarters',
+      lead: 'Rishabh Singh',
+      heroImage: '/images/hero-app-development.jpg',
+      introHeading: 'Low-code delivery, without the low-code mess',
       introBody: [
-        'We plan and execute cloud migrations, build secure landing zones and keep workloads fast, compliant and cost efficient.',
-        'The result is a platform your engineers can self-serve against, with guardrails that keep finance and security comfortable.',
+        'Low-code platforms let you replace spreadsheets and manual handoffs quickly. Used without discipline, they leave you with hundreds of unowned apps and no way to audit them.',
+        'We deliver fast and set up the governance at the same time — environments, lifecycle management and data policies — so what we build stays supportable after we hand it over.',
       ],
       highlights: [
-        'Landing zone blueprints',
-        'Zero-downtime migrations',
-        'FinOps cost control',
-        'Multi-region resilience',
+        'Working prototype in two to three weeks',
+        'Built on licences you already own',
+        'Governance and ALM from day one',
+        'Handover and training included',
       ],
       sections: [
         {
-          id: 'migration',
-          navLabel: 'Migration',
-          eyebrow: 'Cloud migration',
-          heading: 'Move without the drama',
+          id: 'low-code',
+          navLabel: 'Low-code',
+          eyebrow: 'Low-code / no-code application development',
+          heading: 'Our capabilities',
           body: [
-            'We assess your estate, group workloads by migration pattern and sequence the move around business risk.',
+            'We build business-critical applications on Microsoft Power Platform, bridging the gap between what the business needs and what IT can safely support.',
+            'The aim is always the same: remove manual effort, make the process visible, and leave your team able to maintain it.',
           ],
           capabilities: [
             {
-              title: 'Readiness assessment',
+              title: 'Rapid MVP development',
               description:
-                'Application inventory, dependency mapping and a costed target architecture.',
+                'Validate the idea with a working app in weeks, so you commit budget to something you have already used.',
             },
             {
-              title: 'Migration execution',
+              title: 'Workflow automation and business apps',
               description:
-                'Rehost, re-platform or refactor, with rehearsed cutovers and rollback plans.',
+                'Automate approvals, handoffs and repetitive data entry with auditable, monitored flows.',
             },
             {
-              title: 'Landing zone setup',
+              title: 'Integration with enterprise systems',
               description:
-                'Networking, identity, policy and logging foundations built as code from day one.',
+                'Connect new apps to existing ERP, CRM and line-of-business data through supported connectors, not screen scraping.',
             },
           ],
         },
         {
-          id: 'operations',
-          navLabel: 'Operations',
-          eyebrow: 'Cloud operations',
-          heading: 'Run it well, every day',
+          id: 'governance',
+          navLabel: 'Governance',
+          eyebrow: 'Platform governance',
+          heading: 'Keep citizen development under control',
           body: [
-            'Once you are live, the work shifts to reliability and cost. We handle both with automation rather than headcount.',
+            'The apps your teams build themselves are an asset until nobody knows who owns them, what data they touch or how to restore them.',
+            'We put the guardrails in place so makers can move quickly inside boundaries that your IT and security teams have agreed.',
           ],
           capabilities: [
             {
-              title: 'Cost optimisation',
+              title: 'Environment and ALM strategy',
               description:
-                'Right-sizing, commitment planning and tagging discipline that makes spend explainable.',
+                'Separate development, test and production environments with managed solutions and repeatable deployments.',
             },
             {
-              title: 'Resilience engineering',
+              title: 'Data loss prevention policies',
               description:
-                'Backup, failover and recovery testing against agreed RTO and RPO targets.',
+                'Connector policies that stop business data leaking into unapproved services by accident.',
             },
             {
-              title: 'Platform automation',
+              title: 'Maker enablement',
               description:
-                'Self-service pipelines that let product teams deploy without raising tickets.',
-            },
-          ],
-        },
-      ],
-      technologies: ['Azure', 'AWS', 'Terraform', 'Kubernetes', 'Bicep', 'GitHub Actions'],
-    },
-    {
-      slug: 'managed-services',
-      title: 'Managed IT Services',
-      summary: '24/7 monitoring, service desk and proactive maintenance for your estate.',
-      tagline: 'Always-on support for the systems your people depend on',
-      heroImage: '/images/hero-managed-services.jpg',
-      introHeading: 'A support team that prevents tickets, not just closes them',
-      introBody: [
-        'We look after your endpoints, networks and servers so your people stay productive and your internal team can focus on change instead of firefighting.',
-        'Clear SLAs, transparent reporting and a named team that learns your environment properly.',
-      ],
-      highlights: [
-        '24/7 monitoring',
-        'Named engineers',
-        'Transparent SLAs',
-        'Monthly service reviews',
-      ],
-      sections: [
-        {
-          id: 'service-desk',
-          navLabel: 'Service desk',
-          eyebrow: 'Managed service desk',
-          heading: 'Support your people will actually use',
-          body: [
-            'Tiered support with real humans, sensible escalation and a knowledge base that grows with every ticket.',
-          ],
-          capabilities: [
-            {
-              title: 'Tiered support',
-              description: 'L1 to L3 coverage with escalation paths agreed up front.',
-            },
-            {
-              title: 'Endpoint management',
-              description: 'Provisioning, patching and compliance across Windows, macOS and mobile.',
-            },
-            {
-              title: 'Vendor coordination',
-              description: 'We chase your third-party suppliers so your team does not have to.',
+                'Training, templates and standards so your internal makers build things your IT team is happy to support.',
             },
           ],
         },
         {
-          id: 'monitoring',
-          navLabel: 'Monitoring',
-          eyebrow: 'Proactive monitoring',
-          heading: 'Catch it before users do',
+          id: 'replacement',
+          navLabel: 'Replacement',
+          eyebrow: 'Legacy app replacement',
+          heading: 'Retire the spreadsheets',
           body: [
-            'Continuous monitoring across infrastructure and applications, with alerting tuned to reduce noise rather than generate it.',
+            'Most organisations run critical processes on a shared spreadsheet, an Access database or an ageing SharePoint site that one person understands.',
+            'We map the process as it really runs, then replace it with something supported, permissioned and backed up.',
           ],
           capabilities: [
             {
-              title: 'Infrastructure monitoring',
-              description: 'Capacity, availability and performance tracked against clear baselines.',
+              title: 'Spreadsheet and Access replacement',
+              description:
+                'Turn fragile shared files into a proper application with validation, history and role-based access.',
             },
             {
-              title: 'Patch management',
-              description: 'Scheduled, tested patching with change windows that suit your business.',
+              title: 'SharePoint modernisation',
+              description:
+                'Move classic sites and workflows onto a current, supported platform without losing the data.',
             },
             {
-              title: 'Reporting and reviews',
-              description: 'Monthly service reports and a roadmap of improvements, not just metrics.',
+              title: 'Process mapping',
+              description:
+                'Document how the work actually happens before automating it, so you do not encode the workaround.',
             },
           ],
         },
       ],
-      technologies: ['Microsoft 365', 'Intune', 'ServiceNow', 'Datto', 'Defender'],
+      technologies: [
+        'Microsoft Power Platform',
+        'Power Apps',
+        'Power Automate',
+        'Dataverse',
+        'SharePoint',
+        'Power BI',
+        'Azure Logic Apps',
+      ],
     },
     {
       slug: 'cybersecurity-services',
       title: 'Cybersecurity Services',
-      summary: 'Assess risk, harden your environment and respond when it matters.',
-      tagline: 'Security that fits the way your business operates',
+      summary:
+        'Security assessments, identity hardening and compliance readiness for teams without a security team.',
+      tagline: 'Practical security for organisations without a security team',
+      lead: 'Riya Singh',
       heroImage: '/images/hero-cybersecurity.jpg',
-      introHeading: 'Protect data, users and systems end to end',
+      introHeading: 'Find the gaps before somebody else does',
       introBody: [
-        'We assess your risk posture, close the gaps that matter most and build controls your people can live with.',
-        'When something does happen, you have a tested response plan and a team that has run it before.',
+        'Most mid-sized organisations do not need a security operations centre. They need someone senior to look honestly at what they have, tell them what actually matters, and help fix it.',
+        'Our assessments come back as a prioritised list in plain English, with the remediation steps included — not a 90-page PDF that gets filed and forgotten.',
       ],
       highlights: [
-        'Zero-trust identity',
-        'Continuous assessment',
-        'Tested incident response',
-        'Compliance readiness',
+        'Over a decade of enterprise security experience',
+        'Findings prioritised by real risk, not severity scores',
+        'Remediation guidance, not just a report',
+        'Free re-test of fixed findings',
       ],
       sections: [
         {
@@ -487,264 +290,195 @@ export class Content {
           eyebrow: 'Security assessment',
           heading: 'Know where you stand',
           body: [
-            'A clear, prioritised picture of your exposure — based on testing, not a questionnaire.',
+            'A clear, evidence-based picture of your exposure, based on reviewing your actual configuration rather than a questionnaire.',
+            'You get a ranked set of findings, the business risk behind each one, and what it takes to close it.',
           ],
           capabilities: [
             {
-              title: 'Penetration testing',
-              description: 'External, internal and application testing with actionable findings.',
+              title: 'Configuration and posture review',
+              description:
+                'Microsoft 365, Entra ID and endpoint configuration reviewed against recognised baselines.',
             },
             {
-              title: 'Posture review',
-              description: 'Configuration and identity review against CIS and Microsoft baselines.',
+              title: 'Application security review',
+              description:
+                'Architecture and code review against OWASP guidance, including dependency and secrets scanning.',
             },
             {
-              title: 'Compliance readiness',
-              description: 'Gap analysis and evidence packs for ISO 27001, SOC 2 and GDPR.',
+              title: 'Cloud security assessment',
+              description:
+                'Network, identity and storage configuration reviewed across your Azure subscriptions.',
             },
           ],
         },
         {
-          id: 'defence',
-          navLabel: 'Defence',
-          eyebrow: 'Defence and response',
+          id: 'identity',
+          navLabel: 'Identity',
+          eyebrow: 'Identity and access',
           heading: 'Reduce the blast radius',
           body: [
-            'Layered controls, least-privilege access and a response plan that has actually been rehearsed.',
+            'Identity is where most incidents start and where most of the cheap wins are.',
+            'We tighten who can access what, and make sure a single compromised account cannot reach everything.',
           ],
           capabilities: [
             {
-              title: 'Zero-trust identity',
-              description: 'Conditional access, MFA and privileged access management.',
+              title: 'Conditional access design',
+              description:
+                'Risk-based access policies that tighten security without generating prompts your staff learn to click through.',
             },
             {
-              title: 'Threat detection',
-              description: 'Managed detection with tuned alerting and 24/7 escalation.',
+              title: 'Privileged access review',
+              description:
+                'Find and remove standing admin rights, and put approval behind the ones that must remain.',
             },
             {
-              title: 'Incident response',
-              description: 'Containment, forensics and recovery with post-incident reviews.',
-            },
-          ],
-        },
-      ],
-      technologies: ['Microsoft Defender', 'Sentinel', 'Okta', 'CrowdStrike', 'ISO 27001'],
-    },
-    {
-      slug: 'data-analytics',
-      title: 'Data & Analytics',
-      summary: 'Modern data platforms, pipelines and dashboards you can trust.',
-      tagline: 'One version of the truth, available to every team',
-      heroImage: '/images/hero-data-analytics.jpg',
-      introHeading: 'Turn scattered data into decisions',
-      introBody: [
-        'We build the platforms and pipelines that bring your data together, then make it usable through dashboards people actually open.',
-        'Governed, documented and tested — so the numbers hold up when someone asks how they were produced.',
-      ],
-      highlights: ['Governed data models', 'Automated pipelines', 'Self-service BI', 'Data quality testing'],
-      sections: [
-        {
-          id: 'platform',
-          navLabel: 'Platform',
-          eyebrow: 'Data platform',
-          heading: 'Foundations that hold up',
-          body: [
-            'A warehouse or lakehouse designed around your reporting needs, not around a vendor demo.',
-          ],
-          capabilities: [
-            {
-              title: 'Warehouse and lakehouse design',
-              description: 'Dimensional models and storage layers sized for your actual workload.',
-            },
-            {
-              title: 'ELT pipelines',
-              description: 'Reliable ingestion and transformation with tests and lineage built in.',
-            },
-            {
-              title: 'Governance',
-              description: 'Cataloguing, access control and documentation that stays current.',
+              title: 'MFA and SSO rollout',
+              description:
+                'Phishing-resistant multi-factor authentication rolled out in a sequence your users will accept.',
             },
           ],
         },
         {
-          id: 'insight',
-          navLabel: 'Insight',
-          eyebrow: 'Analytics and insight',
-          heading: 'Answers, not just reports',
+          id: 'compliance',
+          navLabel: 'Compliance',
+          eyebrow: 'Compliance readiness',
+          heading: 'Pass the audit, keep the controls',
           body: [
-            'Dashboards designed around decisions, plus predictive models where they genuinely add value.',
+            'Certification is usually driven by a customer or an insurer, on a deadline.',
+            'We work out the shortest honest path to evidence, and build controls that keep working after the auditor leaves.',
           ],
           capabilities: [
             {
-              title: 'BI dashboards',
-              description: 'Role-based views that answer the questions each team actually asks.',
+              title: 'ISO 27001 and SOC 2 gap analysis',
+              description:
+                'Map your current controls against the standard and get a prioritised remediation plan.',
             },
             {
-              title: 'Predictive analytics',
-              description: 'Forecasting and anomaly detection wired into day-to-day operations.',
+              title: 'Policy and evidence packs',
+              description:
+                'Practical policies your team will actually follow, with the evidence trail auditors ask for.',
             },
             {
-              title: 'Enablement',
-              description: 'Training and documentation so your team can extend the platform.',
+              title: 'Secure development practices',
+              description:
+                'Threat modelling, code review standards and pipeline scanning built into how your software is delivered.',
             },
           ],
         },
       ],
-      technologies: ['Snowflake', 'Databricks', 'dbt', 'Power BI', 'Python', 'Azure Data Factory'],
-    },
-    {
-      slug: 'it-consulting',
-      title: 'IT Consulting',
-      summary: 'Strategy, architecture review and fractional CTO support.',
-      tagline: 'Independent advice on where to invest next',
-      heroImage: '/images/hero-it-consulting.jpg',
-      introHeading: 'Technology decisions you can defend',
-      introBody: [
-        'We give independent advice on architecture, sourcing and budget so your technology investments pay off.',
-        'No reseller margins and no vendor agenda — just a clear recommendation with the trade-offs written down.',
-      ],
-      highlights: ['Vendor independent', 'Costed roadmaps', 'Board-ready reporting', 'Hands-on architects'],
-      sections: [
-        {
-          id: 'strategy',
-          navLabel: 'Strategy',
-          eyebrow: 'Technology strategy',
-          heading: 'A roadmap with real numbers',
-          body: [
-            'We translate business goals into a sequenced technology plan with costs, dependencies and risks made explicit.',
-          ],
-          capabilities: [
-            {
-              title: 'Technology roadmaps',
-              description: 'Prioritised initiatives mapped against budget cycles and capacity.',
-            },
-            {
-              title: 'Architecture review',
-              description: 'Independent assessment of your current design and its scaling limits.',
-            },
-            {
-              title: 'Vendor selection',
-              description: 'Structured evaluation and negotiation support for major purchases.',
-            },
-          ],
-        },
-        {
-          id: 'leadership',
-          navLabel: 'Leadership',
-          eyebrow: 'Fractional leadership',
-          heading: 'Senior cover when you need it',
-          body: [
-            'Experienced CTO and architect cover for organisations that need the seniority without the permanent headcount.',
-          ],
-          capabilities: [
-            {
-              title: 'Fractional CTO',
-              description: 'Hands-on technical leadership for a few days a month.',
-            },
-            {
-              title: 'Team and process design',
-              description: 'Structuring delivery teams, ways of working and hiring plans.',
-            },
-            {
-              title: 'Due diligence',
-              description: 'Technical assessment for investment, acquisition or major partnerships.',
-            },
-          ],
-        },
-      ],
-      technologies: ['TOGAF', 'ITIL', 'Agile', 'FinOps', 'Well-Architected'],
-    },
-  ]);
-
-  readonly caseStudies = signal<CaseStudy[]>([
-    {
-      slug: 'retail-cloud-migration',
-      client: 'Harbour Retail Group',
-      industry: 'Retail',
-      title: 'Migrating 30 stores to a unified cloud platform',
-      summary:
-        'Replaced ageing on-premise servers with a cloud-first platform, cutting infrastructure spend and outages.',
-      results: [
-        { label: 'Infrastructure cost', value: '-38%' },
-        { label: 'Deployment time', value: '-65%' },
-        { label: 'Uptime', value: '99.98%' },
-      ],
-    },
-    {
-      slug: 'healthcare-security-uplift',
-      client: 'Meridian Health',
-      industry: 'Healthcare',
-      title: 'Zero-trust rollout across a 1,200 person clinic network',
-      summary:
-        'Delivered identity-first security controls and achieved compliance sign-off ahead of schedule.',
-      results: [
-        { label: 'Phishing incidents', value: '-82%' },
-        { label: 'Critical audit findings', value: '0' },
-        { label: 'Rollout duration', value: '9 weeks' },
-      ],
-    },
-    {
-      slug: 'logistics-data-platform',
-      client: 'Volta Logistics',
-      industry: 'Logistics',
-      title: 'A real-time data platform for fleet operations',
-      summary:
-        'Consolidated eight data sources into one warehouse with live dashboards for dispatch teams.',
-      results: [
-        { label: 'Reporting lag', value: 'Real time' },
-        { label: 'Manual effort', value: '-120 hrs/mo' },
-        { label: 'On-time delivery', value: '+14%' },
+      technologies: [
+        'Microsoft Defender',
+        'Microsoft Entra ID',
+        'Microsoft Purview',
+        'Azure',
+        'OWASP',
+        'ISO 27001',
+        'NIST CSF',
       ],
     },
   ]);
 
-  readonly testimonials = signal<Testimonial[]>([
+  readonly process = signal<ProcessStep[]>([
     {
-      quote:
-        'They became an extension of our team within weeks and have been steady, pragmatic partners ever since.',
-      author: 'Priya Nair',
-      role: 'CIO',
-      company: 'Harbour Retail Group',
+      title: 'Intro call',
+      duration: '30 minutes, free',
+      description:
+        'You tell us the problem. We tell you honestly whether we are the right people for it, and what it is likely to involve.',
     },
     {
-      quote:
-        'The security uplift was delivered on time and, more importantly, our staff actually adopted it.',
-      author: 'Daniel Okafor',
-      role: 'Head of IT',
-      company: 'Meridian Health',
+      title: 'Discovery',
+      duration: '1–2 weeks, fixed price',
+      description:
+        'We map the process, agree the success measures and produce a costed delivery plan. You own the output whether or not you continue with us.',
     },
     {
-      quote:
-        'We finally have one version of the truth for our operational data. It changed how we run the business.',
-      author: 'Sofia Lindqvist',
-      role: 'COO',
-      company: 'Volta Logistics',
+      title: 'Build',
+      duration: 'Two-week increments',
+      description:
+        'Working software demonstrated at the end of every increment, with scope you can adjust between them.',
     },
+    {
+      title: 'Handover',
+      duration: 'Before we invoice the final stage',
+      description:
+        'Source code, documentation, environments and a walkthrough for whoever will maintain it. No lock-in.',
+    },
+    {
+      title: 'Support',
+      duration: 'Optional, monthly',
+      description:
+        'A retainer for changes, monitoring and small enhancements if you would rather not carry it internally.',
+    },
+  ]);
+
+  readonly engagementModels = signal<EngagementModel[]>([
+    {
+      name: 'Fixed-price discovery',
+      bestFor: 'Getting a costed plan',
+      description:
+        'A short, scoped piece of work that ends with a delivery plan, estimate and architecture you can act on with or without us.',
+    },
+    {
+      name: 'Project delivery',
+      bestFor: 'A defined outcome',
+      description:
+        'We deliver an agreed scope in two-week increments against a fixed budget envelope, with change handled between increments.',
+    },
+    {
+      name: 'Monthly retainer',
+      bestFor: 'Ongoing change',
+      description:
+        'A set number of days each month for enhancements, maintenance and advice, with unused capacity discussed rather than silently billed.',
+    },
+    {
+      name: 'Security assessment',
+      bestFor: 'A point-in-time answer',
+      description:
+        'A one-off review of your environment or application, delivered as a prioritised findings report with remediation guidance.',
+    },
+  ]);
+
+  /** Being explicit about scope is more useful to a buyer than pretending to cover everything. */
+  readonly exclusions = signal<string[]>([
+    'A 24/7 manned service desk — we are three people, and we will not pretend otherwise',
+    'Hardware procurement, cabling or on-site desktop support',
+    'Body-shopping developers by the dozen',
+    'Reselling licences we get a margin on',
   ]);
 
   readonly team = signal<TeamMember[]>([
-    { name: 'Alex Moreau', role: 'Managing Director' },
-    { name: 'Rhea Kapoor', role: 'Head of Engineering' },
-    { name: 'Tom Becker', role: 'Security Lead' },
-    { name: 'Lina Costa', role: 'Client Services' },
+    {
+      name: 'Nitesh Kumar Singh',
+      role: 'Software Engineering Lead',
+      experience: '7 years',
+      bio: 'Seven years building and maintaining enterprise applications in pro-code stacks, from greenfield products to systems that had been running for a decade before he touched them.',
+      focus: ['Custom applications', 'API integration', 'Modernisation'],
+    },
+    {
+      name: 'Rishabh Singh',
+      role: 'Low-Code Practice Lead',
+      experience: '7 years',
+      bio: 'Seven years delivering enterprise low-code and no-code solutions, with a focus on making fast delivery survive contact with an IT governance review.',
+      focus: ['Power Platform', 'Workflow automation', 'Platform governance'],
+    },
+    {
+      name: 'Riya Singh',
+      role: 'Security Lead',
+      experience: '10+ years',
+      bio: 'Over a decade in enterprise cybersecurity, covering assessment, identity and access, and taking organisations through compliance certification.',
+      focus: ['Security assessment', 'Identity and access', 'Compliance'],
+    },
   ]);
 
   readonly contact = signal<ContactDetails>({
-    email: 'hello@northwind-it.example',
-    phone: '+1 (555) 014-2200',
-    address: '120 Riverside Avenue, Suite 400, Portland, OR',
-    social: [
-      { label: 'LinkedIn', url: 'https://www.linkedin.com' },
-      { label: 'GitHub', url: 'https://github.com' },
-      { label: 'X', url: 'https://x.com' },
-    ],
+    // TODO: replace all three with real details before launch.
+    email: 'hello@trivance.example',
+    phone: '+00 0000 000000',
+    location: 'Remote-first',
+    social: [{ label: 'LinkedIn', url: 'https://www.linkedin.com' }],
   });
 
   serviceBySlug(slug: string): ServiceItem | undefined {
     return this.services().find((service) => service.slug === slug);
-  }
-
-  caseStudyBySlug(slug: string): CaseStudy | undefined {
-    return this.caseStudies().find((study) => study.slug === slug);
   }
 }

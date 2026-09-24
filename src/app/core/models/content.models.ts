@@ -24,8 +24,10 @@ export interface ServiceItem {
   title: string;
   /** Short line used on cards and listings. */
   summary: string;
-  /** Hero strapline, e.g. "Reimagining application development for agility and scale". */
+  /** Hero strapline shown under the page title. */
   tagline: string;
+  /** Name of the team member who leads this practice. */
+  lead: string;
   introHeading: string;
   introBody: string[];
   highlights: string[];
@@ -35,35 +37,35 @@ export interface ServiceItem {
   heroImage?: string;
 }
 
-export interface CaseStudy {
-  slug: string;
-  client: string;
-  industry: string;
+export interface ProcessStep {
   title: string;
-  summary: string;
-  results: { label: string; value: string }[];
+  duration: string;
+  description: string;
 }
 
-export interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
+export interface EngagementModel {
+  name: string;
+  bestFor: string;
+  description: string;
 }
 
-export interface Stat {
-  label: string;
+/** A promise about how we work, used instead of unverifiable track-record stats. */
+export interface Commitment {
   value: string;
+  label: string;
 }
 
 export interface TeamMember {
   name: string;
   role: string;
+  experience: string;
+  bio: string;
+  focus: string[];
 }
 
 export interface ContactDetails {
   email: string;
   phone: string;
-  address: string;
+  location: string;
   social: { label: string; url: string }[];
 }

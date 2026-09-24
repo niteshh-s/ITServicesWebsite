@@ -1,0 +1,83 @@
+<app-page-hero
+  title="How we work"
+  tagline="A small team, a clear process, no surprises"
+  image="/images/hero-how-we-work.jpg"
+/>
+
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      align="left"
+      eyebrow="Process"
+      heading="From first call to handover"
+      description="Every engagement runs the same way, whether it is a two-week assessment or a six-month build."
+    />
+    <ol class="process">
+      @for (step of process(); track step.title; let i = $index) {
+        <li>
+          <span class="process__num" aria-hidden="true">{{ i + 1 }}</span>
+          <div class="process__body">
+            <h3>{{ step.title }}</h3>
+            <span class="process__duration">{{ step.duration }}</span>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading
+      align="left"
+      eyebrow="Engagement models"
+      heading="Ways to work with us"
+    />
+    <div class="grid grid--2">
+      @for (model of engagementModels(); track model.name) {
+        <article class="model">
+          <span class="model__best">Best for: {{ model.bestFor }}</span>
+          <h3>{{ model.name }}</h3>
+          <p>{{ model.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-heading align="left" eyebrow="Our commitments" heading="What you always get" />
+    <div class="grid grid--2">
+      @for (item of guarantees; track item.title) {
+        <article class="guarantee">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading
+      align="left"
+      eyebrow="Scope"
+      heading="What we don't do"
+      description="We would rather lose the enquiry than take work we cannot do properly at our size."
+    />
+    <ul class="exclusions">
+      @for (item of exclusions(); track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<app-cta-banner
+  heading="Start with a 30-minute call"
+  description="No pitch deck. We will tell you what we think the problem is and whether we are the right people to solve it."
+  ctaLabel="Book an intro call"
+/>

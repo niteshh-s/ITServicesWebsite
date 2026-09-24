@@ -1,6 +1,6 @@
 <app-page-hero
   title="About us"
-  tagline="Engineers, architects and support specialists"
+  tagline="Three specialists who got tired of the layers"
   image="/images/hero-about.jpg"
 />
 
@@ -8,19 +8,25 @@
   <div class="container intro">
     <div>
       <span class="eyebrow eyebrow--brand">Who we are</span>
-      <h2 class="accent-cap">A team that treats your systems like our own</h2>
+      <h2 class="accent-cap">A deliberately small team</h2>
       <p class="lead">
-        {{ companyName() }} has been helping organisations plan, build and operate their technology
-        since 2013. We work in small, senior teams that stay with a client long enough to understand
-        the business, not just the ticket.
+        {{ companyName() }} is three senior specialists covering software engineering, low-code
+        delivery and cybersecurity. Between us that is more than twenty years of enterprise
+        experience, spent inside the kind of organisations we now work with.
+      </p>
+      <p class="lead">
+        We started this because the model we kept seeing did not serve clients well: a polished
+        pitch from senior people, followed by delivery from whoever was available. Here, the person
+        who scopes your work is the person who does it. That only stays true if we stay small, so we
+        intend to.
       </p>
     </div>
 
-    <dl class="stats">
-      @for (stat of stats(); track stat.label) {
+    <dl class="commitments">
+      @for (item of commitments(); track item.label) {
         <div>
-          <dt>{{ stat.value }}</dt>
-          <dd>{{ stat.label }}</dd>
+          <dt>{{ item.value }}</dt>
+          <dd>{{ item.label }}</dd>
         </div>
       }
     </dl>
@@ -29,7 +35,31 @@
 
 <section class="section section--alt">
   <div class="container">
-    <app-section-heading align="left" eyebrow="How we work" heading="Our values" />
+    <app-section-heading align="left" eyebrow="The team" heading="Who you will be working with" />
+    <ul class="team">
+      @for (member of team(); track member.name) {
+        <li>
+          <div class="team__head">
+            <h3>{{ member.name }}</h3>
+            <span class="team__role">{{ member.role }} &middot; {{ member.experience }}</span>
+          </div>
+          <div class="team__body">
+            <p>{{ member.bio }}</p>
+            <ul class="tags">
+              @for (item of member.focus; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-heading align="left" eyebrow="How we operate" heading="What we care about" />
     <div class="grid grid--2">
       @for (value of values; track value.title) {
         <article class="value">
@@ -38,20 +68,9 @@
         </article>
       }
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <app-section-heading align="left" eyebrow="Leadership" heading="Meet the team" />
-    <ul class="team">
-      @for (member of team(); track member.name) {
-        <li>
-          <h3>{{ member.name }}</h3>
-          <p>{{ member.role }}</p>
-        </li>
-      }
-    </ul>
+    <div class="more">
+      <a class="btn btn--ghost" routerLink="/how-we-work">See our delivery process</a>
+    </div>
   </div>
 </section>
 

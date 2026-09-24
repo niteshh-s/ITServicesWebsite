@@ -8,10 +8,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './cta-banner.html',
 })
 export class CtaBanner {
-  readonly heading = input('Ready to build something that lasts?');
+  readonly heading = input('Start with a 30-minute call');
   readonly description = input(
-    'Tell us about your application, platform or support challenge and we will map out the options.',
+    'Tell us about the application, automation or security problem you are facing. If we are not the right fit, we will say so.',
   );
-  readonly ctaLabel = input('Start a conversation');
+  readonly ctaLabel = input('Get in touch');
   readonly ctaLink = input('/contact');
 }

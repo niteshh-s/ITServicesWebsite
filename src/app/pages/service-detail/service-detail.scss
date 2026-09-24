@@ -135,11 +135,15 @@
     text-transform: uppercase;
 
     &::before {
-      content: '—';
+      content: '\2014';
       margin-right: var(--space-3);
       color: var(--color-brand);
     }
   }
+}
+
+.highlights__lead {
+  color: var(--color-brand);
 }
 
 .block__body {

@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Content } from '../../core/services/content';
 import { Seo } from '../../core/services/seo';
 import { CtaBanner } from '../../shared/components/cta-banner/cta-banner';
@@ -6,7 +7,7 @@ import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { SectionHeading } from '../../shared/components/section-heading/section-heading';
 
 @Component({
-  imports: [PageHero, SectionHeading, CtaBanner],
+  imports: [RouterLink, PageHero, SectionHeading, CtaBanner],
   selector: 'app-about',
   styleUrl: './about.scss',
   templateUrl: './about.html',
@@ -15,32 +16,33 @@ export class About {
   private readonly content = inject(Content);
 
   protected readonly companyName = this.content.companyName;
-  protected readonly stats = this.content.stats;
+  protected readonly commitments = this.content.commitments;
   protected readonly team = this.content.team;
 
   protected readonly values = [
     {
-      title: 'Pragmatic, not dogmatic',
-      body: 'We recommend the simplest solution that solves the problem and scales with you.',
+      title: 'Small on purpose',
+      body: 'Three senior people with no bench to keep busy. We take on a limited number of projects so none of them get the junior treatment.',
+    },
+    {
+      title: 'Honest about scope',
+      body: 'We turn down work that sits outside our three practices. Telling you we cannot help costs us one project; pretending otherwise costs you a lot more.',
     },
     {
       title: 'Transparent by default',
-      body: 'Clear estimates, clear reporting and no surprises on the invoice.',
+      body: 'Fixed-price discovery, clear estimates, and an invoice that matches what we said it would be.',
     },
     {
-      title: 'Security first',
-      body: 'Every design decision is reviewed against your risk and compliance requirements.',
-    },
-    {
-      title: 'Long-term partners',
-      body: 'Most of our clients have been with us for more than five years.',
+      title: 'No lock-in',
+      body: 'Code, infrastructure and accounts are in your name from day one. If you want to take it in-house, we will help you do it.',
     },
   ];
 
   constructor() {
     inject(Seo).update({
       title: 'About Us',
-      description: 'Who we are, how we work and the team behind the projects.',
+      description:
+        'A three-person specialist team covering software engineering, low-code delivery and cybersecurity.',
     });
   }
 }

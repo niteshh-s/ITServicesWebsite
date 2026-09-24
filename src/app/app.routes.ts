@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
-    title: 'IT Services & Consulting',
+    title: 'Software, Low-Code & Security Specialists',
   },
   {
     path: 'services',
@@ -17,9 +17,9 @@ export const routes: Routes = [
       import('./pages/service-detail/service-detail').then((m) => m.ServiceDetail),
   },
   {
-    path: 'case-studies',
-    loadComponent: () => import('./pages/case-studies/case-studies').then((m) => m.CaseStudies),
-    title: 'Case Studies',
+    path: 'how-we-work',
+    loadComponent: () => import('./pages/how-we-work/how-we-work').then((m) => m.HowWeWork),
+    title: 'How We Work',
   },
   {
     path: 'about',

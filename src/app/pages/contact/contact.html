@@ -1,6 +1,6 @@
 <app-page-hero
   title="Contact"
-  tagline="Let's talk about your project"
+  tagline="Tell us what you are trying to fix"
   image="/images/hero-contact.jpg"
 />
 
@@ -62,8 +62,8 @@
         <dd><a [href]="'mailto:' + contact().email">{{ contact().email }}</a></dd>
         <dt>Phone</dt>
         <dd><a [href]="'tel:' + contact().phone">{{ contact().phone }}</a></dd>
-        <dt>Office</dt>
-        <dd>{{ contact().address }}</dd>
+        <dt>Based</dt>
+        <dd>{{ contact().location }}</dd>
       </dl>
     </aside>
   </div>
